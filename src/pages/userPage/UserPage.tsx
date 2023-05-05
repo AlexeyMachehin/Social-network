@@ -3,8 +3,9 @@ import Post from '../../components/post/Post';
 import classes from './userPage.module.css';
 
 export default function UserPage() {
-  const isMyPage = false;
+  const isMyPage = true;
   const isFriend = true;
+  const posts = true;
 
   return (
     <>
@@ -51,22 +52,26 @@ export default function UserPage() {
         className={`container ${classes.posts} ${
           !isMyPage && classes.postsRoundedBorder
         }`}>
-        <div className={classes.postsList}>
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-        </div>
+        {posts ? (
+          <div className={classes.postsList}>
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+          </div>
+        ) : (
+          <div>No posts</div>
+        )}
       </div>
     </>
   );
