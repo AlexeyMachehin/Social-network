@@ -13,7 +13,7 @@ export default function UserPage() {
           className={`container ${classes.userInfo} ${
             !isMyPage && classes.userInfoRoundedBorder
           }`}>
-          <Avatar alt="Avatar" src="" className={classes.userInfo__avatar} />
+          <Avatar alt="Avatar" src="#" className={classes.userInfo__avatar} />
 
           <div className={classes.userInfo__content}>
             <div style={{ display: 'flex' }}>
