@@ -30,7 +30,7 @@ body {
 }
 
 /* @media screen and (max-width: 576px) {
-  .mainContainer {
-    width: 100%;
-  }
+ body{
+  overflow: auto;
+ }
 } */

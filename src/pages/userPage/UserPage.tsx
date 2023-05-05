@@ -1,6 +1,6 @@
 import { Avatar } from '@mui/material';
-import classes from './userPage.module.css';
 import Post from '../../components/post/Post';
+import classes from './userPage.module.css';
 
 export default function UserPage() {
   const isMyPage = false;

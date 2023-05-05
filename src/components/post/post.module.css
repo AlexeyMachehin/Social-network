@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 576px) {
   .postWrapper {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .avatar {
