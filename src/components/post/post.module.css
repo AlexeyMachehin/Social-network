@@ -1,0 +1,22 @@
+.postWrapper {
+  display: flex;
+  padding: 10px;
+  /* border-bottom: 1px solid grey; */
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.userData {
+  display: flex;
+}
+
+.userDataItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+}

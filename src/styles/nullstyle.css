@@ -1,4 +1,5 @@
 * {
+  color: white;
   padding: 0;
   margin: 0;
   border: 0;
@@ -62,6 +63,8 @@ input {
 button {
   font-family: inherit;
   cursor: pointer;
+  background-color: inherit;
+  font-size: inherit;
 }
 
 textarea {
