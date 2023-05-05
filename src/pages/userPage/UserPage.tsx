@@ -16,15 +16,15 @@ export default function UserPage() {
           <Avatar alt="Avatar" src="#" className={classes.userInfo__avatar} />
 
           <div className={classes.userInfo__content}>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', marginBottom: '10px' }}>
               <div className={classes.userInfo__content_name}>Алексей</div>
               <div>Мачехин</div>
             </div>
 
             <div>
-              <div>30 лет</div>
-              <div>Екатеринбург</div>
-              <div>УрГЭУ</div>
+              <div className={classes.contentItem}>30 лет</div>
+              <div className={classes.contentItem}>Екатеринбург</div>
+              <div className={classes.contentItem}>УрГЭУ</div>
             </div>
           </div>
         </div>
