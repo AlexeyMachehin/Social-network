@@ -13,7 +13,7 @@ body {
 }
 
 .mainContainer {
-  width: 900px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
 }
@@ -28,3 +28,9 @@ body {
 .mainButton:hover {
   background-color: #ffffff23;
 }
+
+/* @media screen and (max-width: 576px) {
+  .mainContainer {
+    width: 100%;
+  }
+} */
