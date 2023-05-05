@@ -7,8 +7,8 @@ export default function Post() {
       <div className={classes.postWrapper}>
         <Avatar
           className={classes.avatar}
-          alt="Remy Sharp"
-          src="/static/images/avatar/1.jpg"
+          alt="Avatar"
+          src="#"
         />
         <div className={classes.postContent}>
           <div className={classes.userData}>
