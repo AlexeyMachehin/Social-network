@@ -1,6 +1,8 @@
 .userInfo {
   display: flex;
+  /* flex-wrap: wrap; */
   width: 100%;
+  padding: 0;
 }
 
 .userInfoRoundedBorder {
@@ -26,8 +28,8 @@
   display: flex;
   flex-direction: column;
   flex: 2;
-  padding: 0 20px;
-  margin: 0 20px;
+  padding: 0 10px;
+  margin: 0 10px;
   border-left: 1px solid grey;
 }
 
@@ -59,11 +61,13 @@
   margin-bottom: 5px;
 }
 
+.userInfo__content_name {
+  margin-right: 5px;
+}
+
 @media screen and (max-width: 576px) {
   .userInfo {
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
   }
 
   .userInfo__content {
@@ -73,5 +77,6 @@
 
   .userInfo__avatar {
     margin-bottom: 10px;
+    margin-left: 10px;
   }
 }
