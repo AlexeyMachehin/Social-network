@@ -1,0 +1,57 @@
+.userInfo {
+  display: flex;
+  width: 100%;
+}
+
+.userInfoRoundedBorder {
+  border-radius: 20px 0 0 20px !important;
+}
+
+.userInfo__avatar {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.posts {
+  height: 100%;
+  border-radius: 0 0 20px 20px !important;
+  overflow: auto;
+}
+
+.postsRoundedBorder {
+  border-radius: 20px !important;
+}
+
+.userInfo__content {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  gap: 10px;
+  padding: 0 20px;
+  margin: 0 20px;
+  border-left: 1px solid grey;
+}
+
+.newPostButton {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-bottom: none !important;
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.friendshipToggle {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0 !important;
+  border-left: none !important;
+}
+
+.postsList {
+  height: 100%;
+  overflow-y: auto;
+}

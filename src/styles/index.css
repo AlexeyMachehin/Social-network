@@ -1,2 +1,30 @@
 @import url('./nullstyle.css');
 @import url('./variables.css');
+
+body {
+  background-color: var(--app-background);
+}
+
+.container {
+  padding: 10px;
+  border: 1px solid var(--container-border);
+  border-radius: 20px;
+  background-color: #222222;
+}
+
+.mainContainer {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.mainButton:hover {
+  background-color: #ffffff23;
+}

@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.item {
+  padding: 5px 10px;
+}
+
+.item:not(:last-child) {
+  border-right: 1px solid grey;
+}
+
+
