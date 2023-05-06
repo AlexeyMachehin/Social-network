@@ -18,7 +18,7 @@
   align-items: center;
   flex-direction: column;
   width: 95vw;
-  min-height: 50px;
+  height: 60vh;
   overflow-y: auto;
   background-color: white;
   border: 2px solid black;
