@@ -1,8 +1,10 @@
 import { useState, forwardRef } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { Box } from '@mui/material';
+import { Box, Button, Fab, IconButton, TextField } from '@mui/material';
 import Modal from '@mui/material/Modal';
 import classes from './newPostModal.module.css';
+import { PhotoCamera } from '@mui/icons-material';
+import PhotoButton from '../photoButton/PhotoButton';
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -55,13 +57,31 @@ export default function NewPostModal() {
         <Fade in={isModalOpen}>
           <Box className={`container ${classes.textModal}`}>
             <div className={classes.exitButtonWrapper}>
-              {' '}
+              <label className="container mainButton" htmlFor="fileInput">
+                Add photo
+                <input id="fileInput" type="file" hidden />
+              </label>
+
               <button
                 onClick={() => setOpen(false)}
                 className={classes.exitButton}>
                 X
               </button>
             </div>
+            <PhotoButton />
+            <form style={{ width: '100%' }}>
+              <TextField
+                className={classes.input}
+                fullWidth
+                multiline
+                variant="outlined"
+              />
+
+              <button
+                className={`container mainButton ${classes.createPostButton}`}>
+                OK
+              </button>
+            </form>
           </Box>
         </Fade>
       </Modal>
