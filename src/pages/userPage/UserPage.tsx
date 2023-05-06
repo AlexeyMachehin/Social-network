@@ -1,6 +1,7 @@
 import { Avatar } from '@mui/material';
 import Post from '../../components/post/Post';
 import classes from './userPage.module.css';
+import NewPostModal from '../../components/newPostModal/NewPostModal';
 
 export default function UserPage() {
   const isMyPage = true;
@@ -42,11 +43,7 @@ export default function UserPage() {
         )}
       </div>
 
-      {isMyPage && (
-        <button className={`container mainButton ${classes.newPostButton}`}>
-          New post
-        </button>
-      )}
+      {isMyPage && <NewPostModal />}
 
       <div
         className={`container ${classes.posts} ${
