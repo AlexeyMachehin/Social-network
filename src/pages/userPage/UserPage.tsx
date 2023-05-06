@@ -46,11 +46,11 @@ export default function UserPage() {
       {isMyPage && <NewPostModal />}
 
       <div
-        className={`container ${classes.posts} ${
+        className={`container posts ${classes.postsStraightBorder} ${
           !isMyPage && classes.postsRoundedBorder
         }`}>
         {posts ? (
-          <div className={classes.postsList}>
+          <div className="itemsList">
             <Post />
             <Post />
             <Post />
