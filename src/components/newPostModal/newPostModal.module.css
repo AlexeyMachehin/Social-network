@@ -6,7 +6,6 @@
   border-radius: 20px 20px 0 0 !important;
 }
 
-
 .modalWrapper {
   display: flex;
   justify-content: center;
@@ -20,8 +19,20 @@
   width: 95vw;
   height: 60vh;
   overflow-y: auto;
-  background-color: white;
+  background-color: rgba(117, 117, 117, 0.966) !important;
   border: 2px solid black;
   box-shadow: 24px;
   padding: 32px;
+  border-radius: 20px;
+}
+
+.exitButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.exitButton {
+  margin-right: 10px;
+  margin-top: 5px;
 }

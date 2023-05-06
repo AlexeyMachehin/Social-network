@@ -2,7 +2,6 @@ import { useState, forwardRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Box } from '@mui/material';
 import Modal from '@mui/material/Modal';
-import Typography from '@mui/material/Typography';
 import classes from './newPostModal.module.css';
 
 interface FadeProps {
@@ -54,8 +53,9 @@ export default function NewPostModal() {
         onClose={() => setOpen(false)}
         closeAfterTransition>
         <Fade in={isModalOpen}>
-          <Box className={classes.textModal}>
-           <div>dfgk;jhdfg</div>
+          <Box className={`container ${classes.textModal}`}>
+            <div className={classes.exitButtonWrapper}> <button className={classes.exitButton}>X</button></div>
+         
           </Box>
         </Fade>
       </Modal>
