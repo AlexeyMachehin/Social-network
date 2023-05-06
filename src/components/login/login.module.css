@@ -1,0 +1,19 @@
+.wrapper {
+  background-color: antiquewhite !important;
+}
+
+.signInButton {
+  width: 100%;
+}
+
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginTitle {
+  color: black;
+  font-weight: bold;
+}
