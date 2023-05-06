@@ -54,8 +54,14 @@ export default function NewPostModal() {
         closeAfterTransition>
         <Fade in={isModalOpen}>
           <Box className={`container ${classes.textModal}`}>
-            <div className={classes.exitButtonWrapper}> <button className={classes.exitButton}>X</button></div>
-         
+            <div className={classes.exitButtonWrapper}>
+              {' '}
+              <button
+                onClick={() => setOpen(false)}
+                className={classes.exitButton}>
+                X
+              </button>
+            </div>
           </Box>
         </Fade>
       </Modal>
