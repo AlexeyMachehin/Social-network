@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import { useState, useRef } from 'react';
 
 export default function PhotoButton(): JSX.Element {
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [photo, setPhoto] = useState<string | null>(null);
 
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleClick = async () => {
     try {
@@ -55,7 +56,7 @@ export default function PhotoButton(): JSX.Element {
       {!stream && <button onClick={handleClick}>Включить камеру</button>}
       {stream && (
         <div>
-          <video id="cameraPreview" ref={videoRef} srcObject={stream} autoPlay />
+          <video id="videoPreview" ref={videoRef} autoPlay playsInline />
           <button onClick={handleTakePhoto}>Сделать фото</button>
         </div>
       )}
