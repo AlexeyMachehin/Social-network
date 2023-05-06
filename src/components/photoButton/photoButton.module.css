@@ -1,0 +1,15 @@
+.photoButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .uploadedImageContainer {
+    margin-top: 16px;
+  }
+  
+  .uploadedImage {
+    max-width: 120px;
+    max-height: 120px;
+  }
+  

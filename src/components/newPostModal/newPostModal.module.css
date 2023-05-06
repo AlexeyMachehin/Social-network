@@ -17,7 +17,6 @@
   align-items: center;
   flex-direction: column;
   width: 95vw;
-  /* height: 500px; */
   overflow-y: auto;
   background-color: rgba(117, 117, 117, 0.966) !important;
   border: 2px solid black;
@@ -34,6 +33,8 @@
 }
 
 .exitButton {
+  width: 23px;
+  height: 23px;
   margin-right: 10px;
   margin-top: 5px;
 }

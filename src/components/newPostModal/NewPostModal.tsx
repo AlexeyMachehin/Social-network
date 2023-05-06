@@ -56,18 +56,16 @@ export default function NewPostModal() {
         <Fade in={isModalOpen}>
           <Box className={`container ${classes.textModal}`}>
             <div className={classes.exitButtonWrapper}>
-              <label className="container mainButton" htmlFor="fileInput">
-                Add photo
-                <input id="fileInput" type="file" hidden />
-              </label>
 
+              <PhotoButton />
+              
               <button
                 onClick={() => setOpen(false)}
                 className={classes.exitButton}>
                 X
               </button>
             </div>
-            <PhotoButton />
+
             <form style={{ width: '100%' }}>
               <TextField
                 className={classes.input}
