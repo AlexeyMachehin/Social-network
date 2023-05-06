@@ -1,29 +1,5 @@
 import { useState } from 'react';
-import classes from "./photoButton.module.css"
-
-// export default function PhotoButton() {
-//   const [isImageUploaded, setIsImageUploaded] = useState('');
-
-//   const handleImageUpload = (event: any) => {
-//     // Действия, выполняемые после загрузки изображения
-//     console.log(event);
-//     setIsImageUploaded(event.target.files[0].name);
-//   };
-
-//   return (
-//     <label className="container mainButton" htmlFor="fileInput">
-//       {isImageUploaded ? `${isImageUploaded}` : 'Add photo'}
-//       <input
-//         id="fileInput"
-//         type="file"
-//         accept="image/*"
-//         onChange={handleImageUpload}
-//         hidden
-//       />
-//     </label>
-//   );
-// }
-
+import classes from './photoButton.module.css';
 
 export default function PhotoButton() {
   const [isImageUploaded, setIsImageUploaded] = useState('');
@@ -53,7 +29,11 @@ export default function PhotoButton() {
       </label>
       {imageUrl && (
         <div className={classes.uploadedImageContainer}>
-          <img className={classes.uploadedImage} src={imageUrl} alt="Uploaded" />
+          <img
+            className={classes.uploadedImage}
+            src={imageUrl}
+            alt="Uploaded"
+          />
         </div>
       )}
     </div>
