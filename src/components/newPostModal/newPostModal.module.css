@@ -17,7 +17,7 @@
   align-items: center;
   flex-direction: column;
   width: 95vw;
-  height: 70vh;
+  /* height: 500px; */
   overflow-y: auto;
   background-color: rgba(117, 117, 117, 0.966) !important;
   border: 2px solid black;
@@ -28,11 +28,22 @@
 
 .exitButtonWrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .exitButton {
   margin-right: 10px;
   margin-top: 5px;
+}
+
+.createPostButton {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.input {
+  max-height: 350px;
+  overflow-y: auto;
 }
