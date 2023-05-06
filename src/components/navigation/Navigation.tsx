@@ -1,31 +1,54 @@
-import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from '../../consts/routes';
+import { NavLink } from 'react-router-dom';
 import classes from './navigation.module.css';
 
 export default function Navigation() {
-  const navigate = useNavigate();
   return (
     <nav className={classes.wrapper}>
-      <button
-        onClick={() => navigate(RoutePaths.INDEX)}
-        className={`mainButton ${classes.item}`}>
+      <NavLink
+        to={RoutePaths.INDEX}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? `${classes.item}`
+            : isActive
+            ? `${classes.item} ${classes.active}`
+            : `${classes.item}`
+        }>
         Profile
-      </button>
-      <button
-        onClick={() => navigate(RoutePaths.NEWS)}
-        className={`mainButton ${classes.item}`}>
+      </NavLink>
+      <NavLink
+        to={RoutePaths.NEWS}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? `${classes.item}`
+            : isActive
+            ? `${classes.item} ${classes.active}`
+            : `${classes.item}`
+        }>
         News
-      </button>
-      <button
-        onClick={() => navigate(RoutePaths.FRIENDS)}
-        className={`mainButton ${classes.item}`}>
+      </NavLink>
+      <NavLink
+        to={RoutePaths.FRIENDS}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? `${classes.item}`
+            : isActive
+            ? `${classes.item} ${classes.active}`
+            : `${classes.item}`
+        }>
         Friends
-      </button>
-      <button
-        onClick={() => navigate(RoutePaths.AUTHORIZATION)}
-        className={`mainButton ${classes.item}`}>
+      </NavLink>
+      <NavLink
+        to={RoutePaths.AUTHORIZATION}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? `${classes.item}`
+            : isActive
+            ? `${classes.item} ${classes.active}`
+            : `${classes.item}`
+        }>
         Exit
-      </button>
+      </NavLink>
     </nav>
   );
 }

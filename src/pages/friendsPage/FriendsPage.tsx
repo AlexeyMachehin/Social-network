@@ -1,12 +1,83 @@
+import Friend from '../../components/friend/Friend';
+import Post from '../../components/post/Post';
 import classes from './friendsPage.module.css';
 
 export default function FriendsPage() {
+  const posts = true;
+
   return (
     <>
-      <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>
-        Friends list
-      </h2>
-      <div className={`container ${classes.wrapper}`}></div>
+      <div className="container posts">
+        {posts ? (
+          <ul className="itemsList">
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+            <li className="mainButton">
+              <Friend />
+            </li>
+          </ul>
+        ) : (
+          <div>No posts</div>
+        )}
+      </div>
     </>
   );
 }

@@ -4,15 +4,15 @@ import AuthorizationPage from './pages/authorizationPage/AuthorizationPage';
 import FriendsPage from './pages/friendsPage/FriendsPage';
 import NewsPage from './pages/newsPage/NewsPage';
 import UserPage from './pages/userPage/UserPage';
+import Navigation from './components/navigation/Navigation';
 import './styles/App.css';
-import AsidePanel from './components/navigation/Navigation';
 
 function App() {
   return (
     <div className="App">
       <div className="wrapper">
         <div className="mainContainer">
-        <AsidePanel />
+        <Navigation />
           <Routes>
             <Route path={RoutePaths.INDEX} element={<UserPage />} />
             <Route

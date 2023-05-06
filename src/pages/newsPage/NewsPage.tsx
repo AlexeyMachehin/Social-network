@@ -1,30 +1,81 @@
 import Post from '../../components/post/Post';
 import classes from './newsPage.module.css';
 
-export default function FriendsPage() {
+export default function NewsPage() {
   const posts = true;
 
   return (
     <>
-      <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>News</h2>
-      <div className={`container ${classes.wrapper}`}>
+      <div className="container posts">
         {posts ? (
-          <div className={classes.postsList}>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-          </div>
+          <ul className="itemsList">
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+            <li className="mainButton">
+              <Post />
+            </li>
+          </ul>
         ) : (
           <div>No posts</div>
         )}

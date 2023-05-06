@@ -10,7 +10,7 @@
 
 .userData {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .userDataItem:not(:last-child) {
@@ -19,7 +19,8 @@
 
 .postContent {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
 
 @media screen and (max-width: 576px) {
@@ -30,13 +31,4 @@
   .avatar {
     margin-bottom: 5px;
   }
-}
-
-.likes {
-  margin-top: 10px;
-}
-
-.likesButtonWrapper{
-  display: flex;
-  justify-content: flex-start
 }

@@ -7,10 +7,14 @@
 
 .item {
   padding: 5px 10px;
+  margin-right: 5px;
 }
 
 .item:not(:last-child) {
   border-right: 1px solid grey;
 }
 
-
+.active {
+  font-weight: bold;
+  color: antiquewhite;
+}
