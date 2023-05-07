@@ -3,24 +3,34 @@ import { RoutePaths } from '../../consts/routes';
 import { useSignupFormik } from './hooks/useSignupFormik';
 import { Avatar, TextField } from '@mui/material';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { setUser } from '../../store/slices/userSlice';
+import { useAppDispatch } from '../../hooks/reduxHooks';
 import classes from './signup.module.css';
 
-export default function Signup() {
-  //   const dispatch = useAppDispatch();
+export default function Signup(props: { setIsLoginComponent: any }) {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
   const handleSubmit = async (values: any) => {
-    // dispatch(
-    //   signup({
-    //     first_name: values.firstName,
-    //     second_name: values.surname,
-    //     email: values.email,
-    //     phone: values.phone,
-    //     login: values.login,
-    //     password: values.password,
-    //   })
-    // )
-    //   .then(() => dispatch(getUser()))
-    navigate(RoutePaths.INDEX);
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      // .then(({ user }) => {
+      
+      //   dispatch(
+      //     setUser({
+      //       email: user.email,
+      //       firstName: values.firstName,
+      //       surname: values.surname,
+      //       age: values.age,
+      //       city: values.city,
+      //       university: values.university,
+      //       id: user.uid,
+      //       token: user.accessToken,
+      //     }),
+      //   );
+      // })
+      .then(() => navigate(RoutePaths.INDEX));
   };
 
   const formik = useSignupFormik({ onSubmit: handleSubmit });
@@ -150,6 +160,13 @@ export default function Signup() {
           Sign Up
         </button>
       </form>
+      <div className={classes.loginButtonWrapper}>
+        <button
+          onClick={() => props.setIsLoginComponent(true)}
+          className={classes.loginButtonButton}>
+          or Signin
+        </button>
+      </div>
     </div>
   );
 }
