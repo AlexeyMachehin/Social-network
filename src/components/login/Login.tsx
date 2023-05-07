@@ -1,24 +1,31 @@
 import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from '../../consts/routes';
-import { useDispatch } from 'react-redux';
-import { Avatar, Button, TextField, Typography } from '@mui/material';
+import { Avatar, TextField } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useLoginFormik } from './hooks/useLoginFormik';
+import { setUser } from '../../store/slices/userSlice';
+import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
 import classes from './login.module.css';
+import { useAppDispatch } from '../../hooks/reduxHooks';
 
-export default function Login() {
+export default function Login(props: { setIsLoginComponent: any }) {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleSubmit = async (values: any) => {
-    // dispatch(
-    //   login({
-    //     login: values.login,
-    //     password: values.password,
-    //   })
-    // )
-    //   .then(() => dispatch(getUser()))
-    navigate(RoutePaths.INDEX);
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      // .then(({ user }) => {
+      
+      //   dispatch(
+      //     setUser({
+      //       email: user.email,
+      //       id: user.uid,
+      //       token: user.accessToken,
+      //     }),
+      //   );
+      // })
+      .then(() => navigate(RoutePaths.INDEX));
   };
   const formik = useLoginFormik({ onSubmit: handleSubmit });
 
@@ -65,6 +72,13 @@ export default function Login() {
             Sign In
           </button>
         </form>
+        <div className={classes.signupButtonWrapper}>
+          <button
+            onClick={() => props.setIsLoginComponent(false)}
+            className={classes.signupButtonButton}>
+            or Signup
+          </button>
+        </div>
       </div>
     </div>
   );
