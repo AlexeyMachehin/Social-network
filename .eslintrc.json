@@ -30,15 +30,31 @@
             1,
             {
                 "extensions": [
+                    ".ts",
+                    ".tsx",
                     ".js",
-                    ".jsx",
-                    "ts",
-                    "tsx"
+                    ".jsx"
                 ]
             }
         ]
     },
     "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    [
+                        "@",
+                        "./src"
+                    ]
+                ],
+                "extensions": [
+                    ".ts",
+                    ".tsx",
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        },
         "react": {
             "version": "detect"
         }

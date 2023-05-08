@@ -1,6 +1,5 @@
 .userInfo {
   display: flex;
-  /* flex-wrap: wrap; */
   width: 100%;
   padding: 0;
 }
@@ -28,7 +27,7 @@
   flex: 2;
   padding: 0 10px;
   margin: 0 10px;
-  border-left: 1px solid grey;
+  border-left: var(--container-border);
 }
 
 .friendshipToggle {
@@ -41,11 +40,6 @@
   border-radius: 0 20px 20px 0 !important;
   border-left: none !important;
 }
-
-/* .postsList {
-  height: 100%;
-  overflow-y: auto;
-} */
 
 .contentItem:not(:last-child) {
   margin-bottom: 5px;

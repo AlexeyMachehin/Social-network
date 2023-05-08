@@ -9,7 +9,7 @@ body {
   padding: 10px;
   border: 1px solid var(--container-border);
   border-radius: 20px;
-  background-color: #222222;
+  background-color: var(--container-background);
 }
 
 .mainContainer {
@@ -27,7 +27,7 @@ body {
 
 .mainButton:hover {
   cursor: pointer;
-  background-color: #ffffff23;
+  background-color: var(--main-button-background-hover);
 }
 
 .posts {

@@ -1,7 +1,6 @@
 .postWrapper {
   display: flex;
   padding: 10px;
-  /* border-bottom: 1px solid grey; */
 }
 
 .avatar {
@@ -36,7 +35,7 @@
   margin-top: 10px;
 }
 
-.likesButtonWrapper{
+.likesButtonWrapper {
   display: flex;
-  justify-content: flex-start
+  justify-content: flex-start;
 }

@@ -11,12 +11,12 @@
 }
 
 .item:not(:last-child) {
-  border-right: 1px solid grey;
+  border-right: var(--container-border);
 }
 
 .active {
   font-weight: bold;
-  color: antiquewhite;
+  color: var(--auth-component-background);
 }
 
 .exitButton {

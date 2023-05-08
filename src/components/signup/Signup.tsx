@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { RoutePaths } from '../../consts/routes';
 import { useSignupFormik } from './hooks/useSignupFormik';
+import { useAppDispatch } from '@/hooks/reduxHooks';
 import { Avatar, TextField } from '@mui/material';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { setUser } from '../../store/slices/userSlice';
-import { useAppDispatch } from '../../hooks/reduxHooks';
+import { RoutePaths } from '@/consts/routes';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import classes from './signup.module.css';
 
 export default function Signup(props: { setIsLoginComponent: any }) {
@@ -16,7 +15,7 @@ export default function Signup(props: { setIsLoginComponent: any }) {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, values.email, values.password)
       // .then(({ user }) => {
-      
+
       //   dispatch(
       //     setUser({
       //       email: user.email,
@@ -164,7 +163,7 @@ export default function Signup(props: { setIsLoginComponent: any }) {
         <button
           onClick={() => props.setIsLoginComponent(true)}
           className={classes.loginButtonButton}>
-          or Signin
+          or Sign In
         </button>
       </div>
     </div>

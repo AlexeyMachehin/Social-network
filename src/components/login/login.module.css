@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: antiquewhite !important;
+  background-color: var(--auth-component-background) !important;
 }
 
 .signInButton {
@@ -14,7 +14,7 @@
 }
 
 .loginTitle {
-  color: black;
+  color: var(--app-background);
   font-weight: bold;
 }
 
@@ -24,10 +24,10 @@
   margin-top: 20px;
 }
 
-.signupButtonButton:hover {
-  text-decoration: underline;
+.signupButton {
+  color: var(--app-background);
 }
 
-.signupButtonButton {
-  color: black;
+.signupButton:hover {
+  text-decoration: underline;
 }

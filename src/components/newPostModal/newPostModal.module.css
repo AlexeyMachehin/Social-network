@@ -18,8 +18,8 @@
   flex-direction: column;
   width: 95vw;
   overflow-y: auto;
-  background-color: rgba(117, 117, 117, 0.966) !important;
-  border: 2px solid black;
+  background-color: var(--new-post-modal-background) !important;
+  border: var(--new-post-modal-border);
   box-shadow: 24px;
   padding: 32px;
   border-radius: 20px;
