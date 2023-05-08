@@ -17,7 +17,9 @@ export default function Post() {
           aliquam ducimus officiis ex, perspiciatis totam quae aut maxime?
         </div>
         <div className={classes.likesButtonWrapper}>
-          <button className={`container mainButton ${classes.likes}`}>Likes: 0</button>
+          <button className={`container mainButton ${classes.likes}`}>
+            Likes: 0
+          </button>
         </div>
       </div>
     </div>

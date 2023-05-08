@@ -7,8 +7,6 @@ export default function Friend() {
       <Avatar className={classes.avatar} alt="Avatar" src="#" />
 
       <div className={classes.postContent}>
-
-
         <div>
           <div className={classes.userData}>
             <div className={classes.userDataItem}>Name</div>
@@ -20,9 +18,7 @@ export default function Friend() {
         </div>
 
         <button className="container mainButton">Remove from friends</button>
-
       </div>
-
     </div>
   );
 }

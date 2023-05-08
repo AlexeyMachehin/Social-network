@@ -1,8 +1,8 @@
-import { RoutePaths } from '../../consts/routes';
+import { useAppDispatch } from '@/hooks/reduxHooks';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
-import { useAppDispatch } from '../../hooks/reduxHooks';
-import { removeUser } from '../../store/slices/userSlice';
+import { removeUser } from '@/store/slices/userSlice';
+import { RoutePaths } from '@/consts/routes';
 import classes from './navigation.module.css';
 
 export default function Navigation() {

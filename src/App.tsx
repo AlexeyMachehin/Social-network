@@ -1,18 +1,19 @@
-import { Route, Routes } from 'react-router-dom';
-import { RoutePaths } from './consts/routes';
-import AuthorizationPage from './pages/authorizationPage/AuthorizationPage';
-import FriendsPage from './pages/friendsPage/FriendsPage';
-import NewsPage from './pages/newsPage/NewsPage';
-import UserPage from './pages/userPage/UserPage';
-import Navigation from './components/navigation/Navigation';
-import { useAuth } from './hooks/useAuth';
 import { useAppSelector } from './hooks/reduxHooks';
+import { useAuth } from './hooks/useAuth';
+import { selectorUser } from './store/selectors';
+import { Route, Routes } from 'react-router-dom';
+import Navigation from './components/navigation/Navigation';
 import UnAuthGuard from './components/unAuthGuard/UnAuthGuard';
+import AuthorizationPage from './pages/authorizationPage/AuthorizationPage';
 import AuthGuard from './components/authGuard/AuthGuard';
+import UserPage from './pages/userPage/UserPage';
+import NewsPage from './pages/newsPage/NewsPage';
+import FriendsPage from './pages/friendsPage/FriendsPage';
+import { RoutePaths } from './consts/routes';
 import './styles/App.css';
 
 function App() {
-  const user = useAppSelector(state => state.userReducer.user);
+  const user = useAppSelector(selectorUser);
   useAuth();
 
   return (

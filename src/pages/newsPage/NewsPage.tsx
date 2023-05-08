@@ -1,5 +1,4 @@
-import Post from '../../components/post/Post';
-import classes from './newsPage.module.css';
+import Post from '@/components/post/Post';
 
 export default function NewsPage() {
   const posts = true;

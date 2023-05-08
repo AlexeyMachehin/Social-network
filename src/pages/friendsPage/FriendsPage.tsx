@@ -1,6 +1,4 @@
-import Friend from '../../components/friend/Friend';
-import Post from '../../components/post/Post';
-import classes from './friendsPage.module.css';
+import Friend from '@/components/friend/Friend';
 
 export default function FriendsPage() {
   const posts = true;

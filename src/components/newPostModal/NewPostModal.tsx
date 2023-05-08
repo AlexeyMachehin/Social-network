@@ -2,8 +2,8 @@ import { useState, forwardRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Box, TextField } from '@mui/material';
 import Modal from '@mui/material/Modal';
-import classes from './newPostModal.module.css';
 import PhotoButton from '../photoButton/PhotoButton';
+import classes from './newPostModal.module.css';
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -56,9 +56,8 @@ export default function NewPostModal() {
         <Fade in={isModalOpen}>
           <Box className={`container ${classes.textModal}`}>
             <div className={classes.exitButtonWrapper}>
-
               <PhotoButton />
-              
+
               <button
                 onClick={() => setOpen(false)}
                 className={classes.exitButton}>

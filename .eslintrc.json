@@ -30,29 +30,29 @@
             1,
             {
                 "extensions": [
+                    ".ts",
+                    ".tsx",
                     ".js",
-                    ".jsx",
-                    "ts",
-                    "tsx"
+                    ".jsx"
                 ]
             }
         ]
     },
     "settings": {
-        "settings": {
-            "import/resolver": {
-                "alias": {
-                    "map": [
-                        [
-                            "@",
-                            "./src"
-                        ],
-                    ],
-                    "extensions": [
-                        ".js",
-                        ".jsx"
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    [
+                        "@",
+                        "./src"
                     ]
-                }
+                ],
+                "extensions": [
+                    ".ts",
+                    ".tsx",
+                    ".js",
+                    ".jsx"
+                ]
             }
         },
         "react": {

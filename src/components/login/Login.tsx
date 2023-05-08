@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { RoutePaths } from '../../consts/routes';
-import { Avatar, TextField } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useLoginFormik } from './hooks/useLoginFormik';
-import { setUser } from '../../store/slices/userSlice';
+import { useAppDispatch } from '@/hooks/reduxHooks';
+import { Avatar, TextField } from '@mui/material';
 import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
+import { RoutePaths } from '@/consts/routes';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import classes from './login.module.css';
-import { useAppDispatch } from '../../hooks/reduxHooks';
 
 export default function Login(props: { setIsLoginComponent: any }) {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ export default function Login(props: { setIsLoginComponent: any }) {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, values.email, values.password)
       // .then(({ user }) => {
-      
+
       //   dispatch(
       //     setUser({
       //       email: user.email,
@@ -75,8 +74,8 @@ export default function Login(props: { setIsLoginComponent: any }) {
         <div className={classes.signupButtonWrapper}>
           <button
             onClick={() => props.setIsLoginComponent(false)}
-            className={classes.signupButtonButton}>
-            or Signup
+            className={classes.signupButton}>
+            or Sign Up
           </button>
         </div>
       </div>
