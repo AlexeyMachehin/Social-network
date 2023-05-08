@@ -4,6 +4,7 @@ import Signup from '@/components/signup/Signup';
 
 export default function AuthorizationPage() {
   const [isLoginComponent, setIsLoginComponent] = useState(true);
+
   return (
     <>
       {isLoginComponent ? (

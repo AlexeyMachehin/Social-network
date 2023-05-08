@@ -31,3 +31,9 @@
 .signupButton:hover {
   text-decoration: underline;
 }
+
+.googleAuthButtonWrapper{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}

@@ -5,6 +5,7 @@ import { Avatar, TextField } from '@mui/material';
 import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
 import { RoutePaths } from '@/consts/routes';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import GoogleAuthButton from '../googleAuthButton/GoogleAuthButton';
 import classes from './login.module.css';
 
 export default function Login(props: { setIsLoginComponent: any }) {
@@ -67,6 +68,11 @@ export default function Login(props: { setIsLoginComponent: any }) {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
+
+          <div className={classes.googleAuthButtonWrapper}>
+            <GoogleAuthButton />
+          </div>
+
           <button className={`container ${classes.signInButton}`} type="submit">
             Sign In
           </button>

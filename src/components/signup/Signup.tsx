@@ -6,6 +6,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { RoutePaths } from '@/consts/routes';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import classes from './signup.module.css';
+import GoogleAuthButton from '../googleAuthButton/GoogleAuthButton';
 
 export default function Signup(props: { setIsLoginComponent: any }) {
   const dispatch = useAppDispatch();
