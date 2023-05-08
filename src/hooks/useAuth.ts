@@ -9,7 +9,16 @@ export function useAuth() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
-      dispatch(setUser(user));
+      if (user) {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            photoURL: user.photoURL,
+            token: user.accessToken,
+          }),
+        );
+      }
     });
 
     return unsubscribe;
