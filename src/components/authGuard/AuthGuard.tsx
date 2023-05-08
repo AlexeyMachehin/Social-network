@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../hooks/reduxHooks';
+import { useAppSelector } from '@/hooks/reduxHooks';
 import { createPath, Navigate, Outlet, useLocation } from 'react-router-dom';
 
 export default function AuthGuard() {
-  const user = useAppSelector(state => state.userReducer.user)
+  const user = useAppSelector(state => state.userReducer.user);
   const location = useLocation();
 
   if (user) {
