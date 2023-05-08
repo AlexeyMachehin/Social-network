@@ -8,7 +8,10 @@ export default function GoogleAuthButton() {
     signInWithPopup(auth, provider);
   };
   return (
-    <button className={classes.googleAuthButton} onClick={googleAuthLogin}>
+    <button
+      type="button"
+      className={classes.googleAuthButton}
+      onClick={googleAuthLogin}>
       <img
         className={classes.googleAuthButtonIcon}
         src="https://developers.google.com/identity/images/g-logo.png"
