@@ -1,21 +1,20 @@
-FROM mhart/alpine-node:12 AS builder
+# используем node версии 18
+FROM node:18
 
+# создаем и переходим в рабочую директорию приложения
 WORKDIR /app
 
-COPY . .
+# копируем package.json и package-lock.json
+COPY package*.json ./
 
+# устанавливаем зависимости
 RUN npm install
 
+# копируем все файлы проекта
+COPY . .
+
+# билдим приложение
 RUN npm run build
 
-FROM nginx:1.16.0-alpine
-
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-RUN rm /etc/nginx/conf.d/default.conf
-
-COPY deploy/nginx/nginx.conf /etc/nginx/conf.d
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# задаем команду запуска приложения
+CMD ["npm", "start"]
