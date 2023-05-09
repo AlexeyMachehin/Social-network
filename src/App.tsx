@@ -11,6 +11,7 @@ import NewsPage from './pages/newsPage/NewsPage';
 import FriendsPage from './pages/friendsPage/FriendsPage';
 import { RoutePaths } from './consts/routes';
 import Loader from './components/loader/Loader';
+import axios from 'axios';
 import './styles/App.css';
 
 function App() {
@@ -18,6 +19,16 @@ function App() {
   const isLoaderOn = useAppSelector(selectorIsLoaderOn);
 
   useAuth();
+
+  const getProducts = async () => {
+    const products = await axios.get<any>('/api/products', {
+      baseURL: 'http://localhost:5000',
+    });
+
+    console.log(products.data);
+  };
+  
+  getProducts();
 
   return (
     <>
