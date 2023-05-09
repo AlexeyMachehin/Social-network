@@ -15,7 +15,7 @@ const path = isDev
 
 const port = isDev ? 5000 : process.env.SERVER_PORT;
 
-console.log(path);
+console.log(`cors include path: ${path}`);
 
 mongoose
   .connect(
@@ -24,7 +24,7 @@ mongoose
   )
   .then(() => {
     app.listen(port, () => {
-      console.log(`app listens on port  + ${port}`);
+      console.log(`app listens on port: ${port}`);
     });
   });
 
@@ -33,12 +33,11 @@ app.use(
     origin: path,
   }),
 );
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/static', express.static(__dirname + '/assets'));
-app.use('/api/products', require('./routes/products'));
+app.use('/api/users', require('./routes/users'));
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.send('Database connected');
 });

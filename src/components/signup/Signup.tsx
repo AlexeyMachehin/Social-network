@@ -5,8 +5,8 @@ import { Avatar, TextField } from '@mui/material';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { RoutePaths } from '@/consts/routes';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import { userService } from '@/services/userService';
 import classes from './signup.module.css';
-import GoogleAuthButton from '../googleAuthButton/GoogleAuthButton';
 
 export default function Signup(props: { setIsLoginComponent: any }) {
   const dispatch = useAppDispatch();
@@ -15,8 +15,20 @@ export default function Signup(props: { setIsLoginComponent: any }) {
   const handleSubmit = async (values: any) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, values.email, values.password)
-      // .then(({ user }) => {
+      .then(({ user }) => {
+        userService.createUser({
+          email: user.email,
+          firstName: values.firstName,
+          surname: values.surname,
+          age: values.age,
+          city: values.city,
+          university: values.university,
+          id: user.uid,
+          token: user.accessToken,
+        });
+      })
 
+      // .then(({ user }) => {
       //   dispatch(
       //     setUser({
       //       email: user.email,

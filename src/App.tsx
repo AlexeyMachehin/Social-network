@@ -11,7 +11,7 @@ import NewsPage from './pages/newsPage/NewsPage';
 import FriendsPage from './pages/friendsPage/FriendsPage';
 import { RoutePaths } from './consts/routes';
 import Loader from './components/loader/Loader';
-import axios from 'axios';
+import { userService } from './services/userService';
 import './styles/App.css';
 
 function App() {
@@ -20,21 +20,18 @@ function App() {
 
   useAuth();
 
-  const getProducts = async () => {
-    const products = await axios.get<any>('/api/products', {
-      baseURL: 'https://social-network-server-jciy.onrender.com',
-      headers: {
-        'Referrer-Policy': 'no-referrer'
-      }
-    });
+  const test = async () => {
+    // const users = await userService.getUsers<any>();
+    // console.log(users);
 
-    console.log(products.data);
+    // userService.createUser({ id: 'zzz', email: 'zzz' });
+    userService.updateUser("645ab8a9facdbdf5629d55c5", {id:"new", email:"new"})
   };
-  
-  getProducts();
 
   return (
     <>
+      <button onClick={test}>test</button>
+
       {isLoaderOn && <Loader />}
       <div className="App">
         <div className="wrapper">
