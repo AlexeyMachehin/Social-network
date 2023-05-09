@@ -22,7 +22,7 @@ function App() {
 
   const getProducts = async () => {
     const products = await axios.get<any>('/api/products', {
-      baseURL: 'http://localhost:5000',
+      baseURL: 'http://social-network-production-16e8.up.railway.app',
       headers: {
         'Referrer-Policy': 'no-referrer'
       }
