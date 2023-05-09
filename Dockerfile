@@ -10,4 +10,4 @@ RUN npm install
 COPY . .
 
 # Запуск приложения
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "build" ]
