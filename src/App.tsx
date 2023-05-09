@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <button onClick={test}>test</button>
+      {/* <button onClick={test}>test</button> */}
 
       {isLoaderOn && <Loader />}
       <div className="App">

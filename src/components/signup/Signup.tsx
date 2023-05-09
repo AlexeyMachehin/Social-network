@@ -24,7 +24,7 @@ export default function Signup(props: { setIsLoginComponent: any }) {
           city: values.city,
           university: values.university,
           id: user.uid,
-          token: user.accessToken,
+          // token: user.accessToken,
         });
       })
 
