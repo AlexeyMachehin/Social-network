@@ -8,13 +8,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
-const port = process.env.SERVER_PORT || 8000;
 const isDev = process.env.NODE_ENV === 'development';
 const path = isDev
   ? 'http://localhost:5173'
   : 'https://social-network-vk.netlify.app';
 
-console.log(path)
+const port = isDev ? 5000 : process.env.SERVER_PORT;
+
+console.log(path);
 
 mongoose
   .connect(
