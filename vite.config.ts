@@ -19,9 +19,4 @@ export default defineConfig({
       'FIREBASE_MEASUREMENT_ID',
     ]),
   ],
-
-  // build: {
-  //   outDir: 'docs',
-  // },
-  // base: '/Social-network/',
 });

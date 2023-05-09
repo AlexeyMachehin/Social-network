@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "deploy": "gh-pages -d docs"
+    "server": "cd server && npm run start_dev",
+    "start": "concurrently \"npm run server\" \"npm run dev\""
   },
   "author": "Alexey Machehin",
   "dependencies": {
@@ -37,6 +38,7 @@
     "@types/react-dom": "18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
+    "concurrently": "^8.0.1",
     "eslint": "^8.33.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
