@@ -23,6 +23,9 @@ function App() {
   const getProducts = async () => {
     const products = await axios.get<any>('/api/products', {
       baseURL: 'http://localhost:5000',
+      headers: {
+        'Referrer-Policy': 'no-referrer'
+      }
     });
 
     console.log(products.data);
