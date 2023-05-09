@@ -37,7 +37,7 @@ export const useSignupFormik = ({ onSubmit }: IParams) => {
       .required('Email is required'),
     firstName: yup.string().required('First name is required'),
     surname: yup.string().required('Surname is required'),
-    age: yup.number().required('Age is required'),
+    age: yup.string().required('Age is required'),
     city: yup.string().required('City is required'),
     university: yup.string().required('University is required'),
     password: yup

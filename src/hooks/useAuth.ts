@@ -11,6 +11,8 @@ export function useAuth() {
   useEffect(() => {
     dispatch(setIsLoaderOn());
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
+      // const [name, surname] = user.displayName ? user.displayName.split(' ') : ['', ''];
+
       if (user) {
         dispatch(
           setUser({
@@ -18,6 +20,8 @@ export function useAuth() {
             id: user.uid,
             photoURL: user.photoURL,
             token: user.accessToken,
+            // name,
+            // surname,
           }),
         );
       }

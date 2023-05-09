@@ -39,6 +39,7 @@
   "exclude": [
     "./test/",
     "./node_modules/",
-    "./dist/"
+    "./dist/",
+    "./server/server.js"
   ],
 }
