@@ -4,7 +4,9 @@
 import Axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 const isDev = process.env.NODE_ENV === 'development';
-const path = isDev ? 'http://localhost:5000' : process.env.SERVER_API;
+const path = isDev
+  ? 'http://localhost:5000'
+  : 'https://social-network-server-jciy.onrender.com';
 
 console.log(`database connected on path: ${path}`);
 
@@ -13,7 +15,6 @@ const apiAxiosInstance = Axios.create({
   headers: {
     'Referrer-Policy': 'no-referrer',
   },
-  
 });
 import { AnyObject, AnyArray } from 'immer/dist/types/types-internal';
 
