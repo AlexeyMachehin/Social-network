@@ -37,6 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/static', express.static(__dirname + '/assets'));
 app.use('/api/users', require('./routes/users'));
+app.use('/api/posts', require('./routes/posts'));
 
 app.get('/', (req, res) => {
   res.send('Database connected');

@@ -13,7 +13,7 @@ class UserService extends AxiosService {
   }
 
   public async getUser(id: string) {
-    const response = await this.get<{ id: string }>(`${this.baseUrl}:${id}`);
+    const response = await this.get<{ id: string; }>(`${this.baseUrl}/${id}`, { params: { id }});
     return response;
   }
 //ок
@@ -22,19 +22,13 @@ class UserService extends AxiosService {
   }
 
   public async deleteUser(id: string) {
-    await this.delete<{ id: string }>(`${this.baseUrl}:${id}`);
+    await this.delete<{ id: string }>(`${this.baseUrl}/${id}`);
   }
 
   public async updateUser(id: string, userData: any) {
-    await this.put(`${this.baseUrl}:${id}`, userData);
+    await this.put(`${this.baseUrl}/${id}`, userData);
   }
 }
 
 export const userService = new UserService();
-
-// router.get('/', getUsers);
-// router.get('/:id', getUser);
-// router.post('/', createUser);
-// router.delete('/:id', deleteUser);
-// router.put('/:id', updateUser);
 
