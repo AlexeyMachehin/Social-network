@@ -1,5 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+// {
+//   user: {
+//     email: '',
+//     id: '',
+//     photoURL: '',
+//     name: '',
+//     surname: '',
+//     age: '',
+//     city: '',
+//     university: '',
+//     posts: [],
+//   },
+// }
 const initialState = {
   user: null,
 };
@@ -11,6 +23,7 @@ const userSlice = createSlice({
     setUser(state, action) {
       state.user = action.payload;
     },
+
     removeUser(state) {
       state.user = null;
     },

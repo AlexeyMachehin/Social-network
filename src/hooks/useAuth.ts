@@ -19,9 +19,35 @@ export function useAuth() {
             email: user.email,
             id: user.uid,
             photoURL: user.photoURL,
-            token: user.accessToken,
-            // name,
-            // surname,
+            name: 'alex',
+            surname: 'ivanov',
+            age: '23',
+            city: 'moscow',
+            university: 'urgeu',
+            posts: [
+              { id: user.uid, message: 'Hello from alex', likes: 12 },
+              { id: user.uid, message: 'Hello from vasya', likes: 6554 },
+            ],
+            friends: [
+              {
+                email: 'fff@mail.ru',
+                name: 'alfffex',
+                surname: 'machfffehin',
+                age: '30',
+                city: 'ff',
+                university: 'f',
+                id: 'qwerty12345',
+              },
+              {
+                email: 'sdf@mail.ru',
+                name: 'sdf',
+                surname: 'sdf',
+                age: '354',
+                city: 'mosdfscow',
+                university: 'urfsdfu',
+                id: 'zxcv12345',
+              },
+            ],
           }),
         );
       }

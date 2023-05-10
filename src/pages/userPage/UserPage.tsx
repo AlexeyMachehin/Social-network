@@ -1,37 +1,54 @@
+import { selectorUser } from '@/store/selectors';
+import { useAppSelector } from '@/hooks/reduxHooks';
+import { useState } from 'react';
 import { Avatar } from '@mui/material';
 import NewPostModal from '@/components/newPostModal/NewPostModal';
 import Post from '@/components/post/Post';
+import { posts } from '@/mockData/posts';
+import { IPost } from '@/types/post';
+import { useParams } from 'react-router-dom';
 import classes from './userPage.module.css';
 
 export default function UserPage() {
-  const isMyPage = true;
-  const isFriend = true;
-  const posts = true;
+  const { idParam } = useParams();
+  const user = useAppSelector(selectorUser);
+
+  function checkIsMyFriend(userProfile: any, friendId: any) {
+    return userProfile.friends.some((friend: any) => {
+      return friend.id === friendId;
+    });
+  }
+
+  const [isFriend] = useState(idParam ? checkIsMyFriend(user, idParam) : false);
 
   return (
     <>
       <div style={{ display: 'flex', marginBottom: '20px', width: '100%' }}>
         <div
           className={`container ${classes.userInfo} ${
-            !isMyPage && classes.userInfoRoundedBorder
+            idParam && classes.userInfoRoundedBorder
           }`}>
-          <Avatar alt="Avatar" src="#" className={classes.userInfo__avatar} />
+          <Avatar
+            alt="Avatar"
+            src={user.photoURL}
+            className={classes.userInfo__avatar}
+          />
 
           <div className={classes.userInfo__content}>
             <div style={{ display: 'flex', marginBottom: '10px' }}>
-              <div className={classes.userInfo__content_name}>Алексей</div>
-              <div>Мачехин</div>
+              <div className={classes.userInfo__content_name}>{user.name}</div>
+              <div>{user.surname}</div>
             </div>
 
             <div>
-              <div className={classes.contentItem}>30 лет</div>
-              <div className={classes.contentItem}>Екатеринбург</div>
-              <div className={classes.contentItem}>УрГЭУ</div>
+              <div className={classes.contentItem}>{user.age}</div>
+              <div className={classes.contentItem}>{user.city}</div>
+              <div className={classes.contentItem}>{user.university}</div>
             </div>
           </div>
         </div>
 
-        {!isMyPage && (
+        {idParam && (
           <button
             className={`${classes.friendshipToggle} mainButton container`}>
             {isFriend ? (
@@ -43,28 +60,22 @@ export default function UserPage() {
         )}
       </div>
 
-      {isMyPage && <NewPostModal />}
+      {!idParam && <NewPostModal />}
 
       <div
         className={`container posts ${classes.postsStraightBorder} ${
-          !isMyPage && classes.postsRoundedBorder
+          idParam && classes.postsRoundedBorder
         }`}>
         {posts ? (
           <div className="itemsList">
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            {user.posts.map((post: IPost) => (
+              <Post
+                key={`${post.id}${post.message}`}
+                message={post.message}
+                likes={post.likes}
+                id={post.id}
+              />
+            ))}
           </div>
         ) : (
           <div>No posts</div>
