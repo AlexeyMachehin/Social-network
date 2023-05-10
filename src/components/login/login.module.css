@@ -1,0 +1,39 @@
+.wrapper {
+  background-color: var(--auth-component-background) !important;
+}
+
+.signInButton {
+  width: 100%;
+}
+
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginTitle {
+  color: var(--app-background);
+  font-weight: bold;
+}
+
+.signupButtonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.signupButton {
+  color: var(--app-background);
+}
+
+.signupButton:hover {
+  text-decoration: underline;
+}
+
+.googleAuthButtonWrapper{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}

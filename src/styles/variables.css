@@ -1,4 +1,14 @@
 :root {
+  --app-color: white;
   --app-background: #141414;
   --container-border: #939393;
+  --container-background: #222;
+  --main-button-background-hover: #ffffff23;
+
+  /* authPage */
+  --auth-component-background: antiquewhite;
+
+  /* new post modal */
+  --new-post-modal-background: #757575fa;
+  --new-post-modal-border: 2px solid black;
 }

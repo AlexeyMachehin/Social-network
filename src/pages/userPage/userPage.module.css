@@ -1,6 +1,7 @@
 .userInfo {
   display: flex;
   width: 100%;
+  padding: 0;
 }
 
 .userInfoRoundedBorder {
@@ -12,10 +13,8 @@
   height: 100px !important;
 }
 
-.posts {
-  height: 100%;
+.postsStraightBorder {
   border-radius: 0 0 20px 20px !important;
-  overflow: auto;
 }
 
 .postsRoundedBorder {
@@ -26,18 +25,9 @@
   display: flex;
   flex-direction: column;
   flex: 2;
-  gap: 10px;
-  padding: 0 20px;
-  margin: 0 20px;
-  border-left: 1px solid grey;
-}
-
-.newPostButton {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  border-bottom: none !important;
-  border-radius: 20px 20px 0 0 !important;
+  padding: 0 10px;
+  margin: 0 10px;
+  border-left: var(--container-border);
 }
 
 .friendshipToggle {
@@ -51,7 +41,26 @@
   border-left: none !important;
 }
 
-.postsList {
-  height: 100%;
-  overflow-y: auto;
+.contentItem:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.userInfo__content_name {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 350px) {
+  .userInfo {
+    flex-direction: column;
+  }
+
+  .userInfo__content {
+    margin: 0;
+    border: none;
+  }
+
+  .userInfo__avatar {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
 }

@@ -1,0 +1,50 @@
+.newPostButton {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-bottom: none !important;
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.modalWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textModal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 95vw;
+  overflow-y: auto;
+  background-color: var(--new-post-modal-background) !important;
+  border: var(--new-post-modal-border);
+  box-shadow: 24px;
+  padding: 32px;
+  border-radius: 20px;
+}
+
+.exitButtonWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.exitButton {
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.createPostButton {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.input {
+  max-height: 350px;
+  overflow-y: auto;
+}

@@ -7,10 +7,18 @@
 
 .item {
   padding: 5px 10px;
+  margin-right: 5px;
 }
 
 .item:not(:last-child) {
-  border-right: 1px solid grey;
+  border-right: var(--container-border);
 }
 
+.active {
+  font-weight: bold;
+  color: var(--auth-component-background);
+}
 
+.exitButton {
+  padding: 5px;
+}

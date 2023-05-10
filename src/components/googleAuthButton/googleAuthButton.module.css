@@ -1,0 +1,16 @@
+.googleAuthButton {
+  width: 200px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.googleAuthButtonIcon {
+  height: 18px;
+  width: 18px;
+  margin-right: 8px;
+}
+
+.googleAuthButton span {
+  color: var(--app-background);
+}

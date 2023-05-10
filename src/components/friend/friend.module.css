@@ -1,0 +1,33 @@
+.postWrapper {
+  display: flex;
+  padding: 10px;
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.userData {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.userDataItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.postContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .postWrapper {
+    flex-direction: column;
+  }
+
+  .avatar {
+    margin-bottom: 5px;
+  }
+}

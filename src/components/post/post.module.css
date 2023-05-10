@@ -1,7 +1,6 @@
 .postWrapper {
   display: flex;
   padding: 10px;
-  /* border-bottom: 1px solid grey; */
 }
 
 .avatar {
@@ -10,6 +9,7 @@
 
 .userData {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .userDataItem:not(:last-child) {
@@ -19,4 +19,23 @@
 .postContent {
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 576px) {
+  .postWrapper {
+    flex-direction: column;
+  }
+
+  .avatar {
+    margin-bottom: 5px;
+  }
+}
+
+.likes {
+  margin-top: 10px;
+}
+
+.likesButtonWrapper {
+  display: flex;
+  justify-content: flex-start;
 }

@@ -1,0 +1,33 @@
+.wrapper {
+  background-color: var(--auth-component-background) !important;
+}
+
+.signUpButton {
+  width: 100%;
+}
+
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupTitle {
+  color: var(--app-background);
+  font-weight: bold;
+}
+
+.loginButtonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.loginButtonButton {
+  color: var(--app-background);
+}
+
+.loginButtonButton:hover {
+  text-decoration: underline;
+}
