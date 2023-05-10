@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { setUser } from '@/store/slices/userSlice';
 import { setIsLoaderOff, setIsLoaderOn } from '@/store/slices/loaderSlice';
+import { mockUser } from '@/mockData/users';
 
 export function useAuth() {
   const dispatch = useAppDispatch();
@@ -14,16 +15,7 @@ export function useAuth() {
       // const [name, surname] = user.displayName ? user.displayName.split(' ') : ['', ''];
 
       if (user) {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            photoURL: user.photoURL,
-            token: user.accessToken,
-            // name,
-            // surname,
-          }),
-        );
+        dispatch(setUser(mockUser));
       }
       dispatch(setIsLoaderOff());
     });

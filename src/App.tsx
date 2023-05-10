@@ -25,7 +25,10 @@ function App() {
     // console.log(users);
 
     // userService.createUser({ id: 'zzz', email: 'zzz' });
-    userService.updateUser("645ab8a9facdbdf5629d55c5", {id:"new", email:"new"})
+    userService.updateUser('645ab8a9facdbdf5629d55c5', {
+      id: 'new',
+      email: 'new',
+    });
   };
 
   return (
@@ -47,7 +50,15 @@ function App() {
               </Route>
 
               <Route element={<AuthGuard />}>
-                <Route path={RoutePaths.INDEX} element={<UserPage />} />
+                <Route
+                  path={RoutePaths.INDEX}
+                  element={<UserPage />}>
+                  <Route
+                    path={RoutePaths.INDEX + '/:idParam'}
+                    element={<UserPage/>}
+                  />
+                </Route>
+
                 <Route path={RoutePaths.NEWS} element={<NewsPage />} />
                 <Route path={RoutePaths.FRIENDS} element={<FriendsPage />} />
               </Route>

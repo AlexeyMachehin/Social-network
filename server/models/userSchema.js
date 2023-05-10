@@ -12,18 +12,11 @@ const userSchema = mongoose.Schema(
     id: { type: String, required: true },
     token: { type: String, required: false },
     age: { type: String, required: false },
+    posts: { type: Array, required: false },
   },
   {
     versionKey: false,
   },
 );
 
-module.exports = mongoose.model('User', userSchema);
-// email: user.email,
-// firstName: values.firstName,
-// surname: values.surname,
-// age: values.age,
-// city: values.city,
-// university: values.university,
-// id: user.uid,
-// token: user.accessToken,
+module.exports = mongoose.model('Users', userSchema, 'users');

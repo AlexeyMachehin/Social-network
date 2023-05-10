@@ -18,7 +18,7 @@ export default function Signup(props: { setIsLoginComponent: any }) {
       .then(({ user }) => {
         userService.createUser({
           email: user.email,
-          firstName: values.firstName,
+          name: values.firstName,
           surname: values.surname,
           age: values.age,
           city: values.city,

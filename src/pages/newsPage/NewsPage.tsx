@@ -1,4 +1,5 @@
 import Post from '@/components/post/Post';
+import { Link } from 'react-router-dom';
 
 export default function NewsPage() {
   const posts = true;
@@ -8,9 +9,11 @@ export default function NewsPage() {
       <div className="container posts">
         {posts ? (
           <ul className="itemsList">
-            <li className="mainButton">
-              <Post />
-            </li>
+            <Link to={`/friends/${123}`}>
+              <li className="mainButton">
+                <Post />
+              </li>
+            </Link>
             <li className="mainButton">
               <Post />
             </li>
