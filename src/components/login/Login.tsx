@@ -6,6 +6,7 @@ import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
 import { RoutePaths } from '@/consts/routes';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import GoogleAuthButton from '../googleAuthButton/GoogleAuthButton';
+import PhoneAuth from '../phoneAuth/PhoneAuth';
 import classes from './login.module.css';
 
 export default function Login(props: { setIsLoginComponent: any }) {
@@ -69,8 +70,9 @@ export default function Login(props: { setIsLoginComponent: any }) {
             helperText={formik.touched.password && formik.errors.password}
           />
 
-          <div className={classes.googleAuthButtonWrapper}>
+          <div className={classes.authButtonWrapper}>
             <GoogleAuthButton />
+            <PhoneAuth />
           </div>
 
           <button className={`container ${classes.signInButton}`} type="submit">
