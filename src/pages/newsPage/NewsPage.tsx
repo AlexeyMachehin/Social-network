@@ -11,72 +11,9 @@ export default function NewsPage() {
           <ul className="itemsList">
             <Link to={`/friends/${123}`}>
               <li className="mainButton">
-                <Post />
+                <Post message={''} likes={0} id={''} />
               </li>
             </Link>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
-            <li className="mainButton">
-              <Post />
-            </li>
           </ul>
         ) : (
           <div>No posts</div>

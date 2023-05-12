@@ -29,7 +29,25 @@ export default function UserPage() {
     if (idParam) {
       userService.getUser(idParam).then(userProfile => {
         setUserData(userProfile);
-        setIsFriend(checkIsMyFriend(user, idParam));
+        setIsFriend(
+          checkIsMyFriend(
+            user
+              ? user
+              : {
+                  email: 'hhh',
+                  id: 'hhh',
+                  photoURL: 'hhh',
+                  name: 'hhh',
+                  surname: 'hhh',
+                  age: 'hhh',
+                  city: 'hhh',
+                  university: 'hhh',
+                  posts: [],
+                  friends: [],
+                },
+            idParam,
+          ),
+        );
       });
     }
   }, []);
