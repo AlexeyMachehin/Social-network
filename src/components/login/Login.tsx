@@ -16,6 +16,7 @@ export default function Login(props: { setIsLoginComponent: any }) {
   const handleSubmit = async (values: any) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, values.email, values.password)
+      .catch(error => console.log(error))
       // .then(({ user }) => {
 
       //   dispatch(

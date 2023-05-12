@@ -20,7 +20,7 @@ export const users = [
 ];
 
 export const mockUser = {
-  email: 'email',
+  email: 'email@yandex.ru',
   name: 'alex',
   surname: 'ivanov',
   age: '23',
@@ -54,7 +54,7 @@ export const mockUser = {
       age: '354',
       city: 'mosdfscow',
       university: 'urfsdfu',
-      id: 'zxcv12345',
+      id: 'drthsf',
       photoURL: '#',
       posts: [
         { id: 'zxcv12345', message: 'Hello from alex', likes: 12 },

@@ -1,4 +1,4 @@
-import { IPost } from "./post";
+import { IPost } from './post';
 
 export interface IUser {
   email: string;
@@ -10,4 +10,6 @@ export interface IUser {
   city: string;
   university: string;
   posts: IPost[] | [];
+  friends: IUser[] | [];
 }
+
