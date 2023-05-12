@@ -1,8 +1,10 @@
+import { IUser } from '@/types/user';
 import { useAppDispatch } from './reduxHooks';
 import { useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { setUser } from '@/store/slices/userSlice';
 import { setIsLoaderOff, setIsLoaderOn } from '@/store/slices/loaderSlice';
+import { userService } from '@/services/userService';
 
 export function useAuth() {
   const dispatch = useAppDispatch();
@@ -14,16 +16,10 @@ export function useAuth() {
       // const [name, surname] = user.displayName ? user.displayName.split(' ') : ['', ''];
 
       if (user) {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            photoURL: user.photoURL,
-            token: user.accessToken,
-            // name,
-            // surname,
-          }),
-        );
+        console.log(user)
+        userService.getUser(user.uid).then((userProfile: IUser) => {
+          dispatch(setUser(userProfile));
+        });
       }
       dispatch(setIsLoaderOff());
     });

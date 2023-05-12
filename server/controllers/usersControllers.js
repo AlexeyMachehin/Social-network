@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const Product = require('../models/userSchema');
+
+const Users = require('../models/userSchema');
 
 const deleteUser = async (req, res) => {
   try {
@@ -13,8 +14,8 @@ const deleteUser = async (req, res) => {
 
 const getUsers = async (req, res) => {
   try {
-    const products = await Product.find();
-    res.status(200).json(products);
+    const users = await Users.find();
+    res.status(200).json(users);
   } catch (error) {
     res.status(500).json({
       message: 'Could not get a list of users',
@@ -22,10 +23,10 @@ const getUsers = async (req, res) => {
   }
 };
 
-const getUser = async (req, res) => {
+const getUserById = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
-    req.status(200).json(product);
+    const user = await Users.findOne({ id: req.params.id });
+    res.end(JSON.stringify(user));
   } catch (error) {
     res.status(400).json({
       message: 'User not found',
@@ -34,32 +35,38 @@ const getUser = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const errors = {};
-
-  if (!req.body.id) {
-    errors.id = { message: 'Enter ID' };
-  }
-
-  if (!req.body.email) {
-    errors.email = { message: 'Enter Email' };
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return res.status(400).json(errors);
-  }
-
   try {
-    const { id, email } = req.body;
-
-    const product = await Product.create({
-      id,
+    const {
       email,
+      name,
+      surname,
+      age,
+      city,
+      university,
+      id,
+      photoURL,
+      posts,
+      friends,
+    } = req.body;
+
+    const user = await Users.create({
+      email,
+      name,
+      surname,
+      age,
+      city,
+      university,
+      id,
+      photoURL,
+      posts,
+      friends,
     });
 
-    res.status(201).json(product);
+    res.status(201).json(user);
   } catch (error) {
     res.status(500).json({
       message: 'Failed to create a user',
+      error,
     });
   }
 };
@@ -67,12 +74,8 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
   const errors = {};
 
-  if (!req.body.id) {
-    errors.name = { message: 'Enter ID' };
-  }
-
-  if (!req.body.email) {
-    errors.manufacturer = { message: 'Enter Email' };
+  if (!req.body) {
+    errors.name = { message: 'Enter data' };
   }
 
   if (Object.keys(errors).length > 0) {
@@ -80,14 +83,21 @@ const updateUser = async (req, res) => {
   }
 
   try {
-    const { id, email } = req.body;
+    const { email, name, surname, city, university, age } = req.body;
 
-    const product = await Product.findByIdAndUpdate(req.params.id, {
-      id,
-      email,
-    });
+    const user = await Users.findOneAndUpdate(
+      { id: req.params.id },
+      {
+        email,
+        name,
+        surname,
+        city,
+        university,
+        age,
+      },
+    );
 
-    res.status(201).json(product);
+    res.status(201).json(user);
   } catch (error) {
     res.status(500).json({
       message: 'Failed to update user data',
@@ -98,7 +108,7 @@ const updateUser = async (req, res) => {
 module.exports = {
   getUsers,
   createUser,
-  getUser,
+  getUserById,
   deleteUser,
   updateUser,
 };

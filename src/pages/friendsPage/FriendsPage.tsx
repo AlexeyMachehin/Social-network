@@ -1,5 +1,4 @@
 import Friend from '@/components/friend/Friend';
-
 export default function FriendsPage() {
   const posts = true;
 

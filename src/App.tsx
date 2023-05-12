@@ -12,7 +12,10 @@ import FriendsPage from './pages/friendsPage/FriendsPage';
 import { RoutePaths } from './consts/routes';
 import Loader from './components/loader/Loader';
 import { userService } from './services/userService';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './styles/App.css';
+
+const theme = createTheme();
 
 function App() {
   const user = useAppSelector(selectorUser);
@@ -25,13 +28,15 @@ function App() {
     // console.log(users);
 
     // userService.createUser({ id: 'zzz', email: 'zzz' });
-    userService.updateUser("645ab8a9facdbdf5629d55c5", {id:"new", email:"new"})
+    userService.updateUser('645ab8a9facdbdf5629d55c5', {
+      id: 'new',
+      email: 'new',
+    });
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       {/* <button onClick={test}>test</button> */}
-
       {isLoaderOn && <Loader />}
       <div className="App">
         <div className="wrapper">
@@ -47,7 +52,13 @@ function App() {
               </Route>
 
               <Route element={<AuthGuard />}>
-                <Route path={RoutePaths.INDEX} element={<UserPage />} />
+                <Route path={RoutePaths.INDEX} element={<UserPage />}>
+                  <Route
+                    path={RoutePaths.INDEX + '/:idParam'}
+                    element={<UserPage />}
+                  />
+                </Route>
+
                 <Route path={RoutePaths.NEWS} element={<NewsPage />} />
                 <Route path={RoutePaths.FRIENDS} element={<FriendsPage />} />
               </Route>
@@ -55,7 +66,7 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 

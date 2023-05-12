@@ -1,6 +1,7 @@
+import { IUser } from '@/types/user';
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+const initialState: { user: IUser | null } = {
   user: null,
 };
 
@@ -11,6 +12,7 @@ const userSlice = createSlice({
     setUser(state, action) {
       state.user = action.payload;
     },
+
     removeUser(state) {
       state.user = null;
     },

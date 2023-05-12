@@ -1,21 +1,21 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const {
   getUsers,
   createUser,
-  getUser,
+  getUserById,
   deleteUser,
   updateUser,
-} = require("../controllers/usersControllers");
-const path = require("path");
+} = require('../controllers/usersControllers');
+const path = require('path');
 
-router.get("/", getUsers);
-router.get("/:id", getUser);
-router.post("/", createUser);
-router.delete("/:id", deleteUser)
-router.put("/:id", updateUser)
+router.get('/', getUsers);
+router.get('/:id', getUserById);
+router.post('/', createUser);
+router.delete('/:id', deleteUser);
+router.put('/:id', updateUser);
 
 module.exports = router;
