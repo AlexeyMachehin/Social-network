@@ -6,6 +6,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { RoutePaths } from '@/consts/routes';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import { userService } from '@/services/userService';
+import { setUser } from '@/store/slices/userSlice';
 import classes from './signup.module.css';
 
 export default function Signup(props: { setIsLoginComponent: any }) {
@@ -16,32 +17,37 @@ export default function Signup(props: { setIsLoginComponent: any }) {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then(({ user }) => {
-        userService.createUser({
-          email: user.email,
-          name: values.firstName,
-          surname: values.surname,
-          age: values.age,
-          city: values.city,
-          university: values.university,
-          id: user.uid,
-          // token: user.accessToken,
-        });
+        userService
+          .createUser({
+            email: user.email,
+            name: values.firstName,
+            surname: values.surname,
+            age: values.age,
+            city: values.city,
+            university: values.university,
+            id: user.uid,
+            photoURL: '#',
+            posts: [],
+            friends: [],
+          })
+          .then(() => {
+            dispatch(
+              setUser({
+                email: user.email,
+                name: values.firstName,
+                surname: values.surname,
+                age: values.age,
+                city: values.city,
+                university: values.university,
+                id: user.uid,
+                photoURL: '',
+                posts: [],
+                friends: [],
+              }),
+            );
+          });
       })
 
-      // .then(({ user }) => {
-      //   dispatch(
-      //     setUser({
-      //       email: user.email,
-      //       firstName: values.firstName,
-      //       surname: values.surname,
-      //       age: values.age,
-      //       city: values.city,
-      //       university: values.university,
-      //       id: user.uid,
-      //       token: user.accessToken,
-      //     }),
-      //   );
-      // })
       .then(() => navigate(RoutePaths.INDEX));
   };
 

@@ -1,18 +1,7 @@
+import { IUser } from '@/types/user';
 import { createSlice } from '@reduxjs/toolkit';
-// {
-//   user: {
-//     email: '',
-//     id: '',
-//     photoURL: '',
-//     name: '',
-//     surname: '',
-//     age: '',
-//     city: '',
-//     university: '',
-//     posts: [],
-//   },
-// }
-const initialState = {
+
+const initialState: { user: IUser | null } = {
   user: null,
 };
 

@@ -1,3 +1,4 @@
+import { IUser } from '@/types/user';
 import { AxiosService } from './AxiosService';
 
 class UserService extends AxiosService {
@@ -6,17 +7,19 @@ class UserService extends AxiosService {
   public constructor() {
     super();
   }
-//ок
+
   public async getUsers<T>() {
     const response = await this.get<any>(this.baseUrl);
     return response;
   }
 
-  public async getUser(id: string) {
-    const response = await this.get<{ id: string; }>(`${this.baseUrl}/${id}`, { params: { id }});
+  public async getUser(id: string): Promise<IUser> {
+    const response = await this.get<IUser>(`${this.baseUrl}/${id}`, {
+      params: { id },
+    });
     return response;
   }
-//ок
+
   public async createUser(userData: any) {
     await this.post(this.baseUrl, userData);
   }
@@ -31,4 +34,3 @@ class UserService extends AxiosService {
 }
 
 export const userService = new UserService();
-

@@ -35,32 +35,38 @@ const getUserById = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const errors = {};
-
-  if (!req.body.id) {
-    errors.id = { message: 'Enter ID' };
-  }
-
-  if (!req.body.email) {
-    errors.email = { message: 'Enter Email' };
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return res.status(400).json(errors);
-  }
-
   try {
-    const { id, email } = req.body;
+    const {
+      email,
+      name,
+      surname,
+      age,
+      city,
+      university,
+      id,
+      photoURL,
+      posts,
+      friends,
+    } = req.body;
 
     const user = await Users.create({
-      id,
       email,
+      name,
+      surname,
+      age,
+      city,
+      university,
+      id,
+      photoURL,
+      posts,
+      friends,
     });
 
     res.status(201).json(user);
   } catch (error) {
     res.status(500).json({
       message: 'Failed to create a user',
+      error,
     });
   }
 };

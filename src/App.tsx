@@ -12,7 +12,10 @@ import FriendsPage from './pages/friendsPage/FriendsPage';
 import { RoutePaths } from './consts/routes';
 import Loader from './components/loader/Loader';
 import { userService } from './services/userService';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './styles/App.css';
+
+const theme = createTheme();
 
 function App() {
   const user = useAppSelector(selectorUser);
@@ -32,9 +35,8 @@ function App() {
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       {/* <button onClick={test}>test</button> */}
-
       {isLoaderOn && <Loader />}
       <div className="App">
         <div className="wrapper">
@@ -50,12 +52,10 @@ function App() {
               </Route>
 
               <Route element={<AuthGuard />}>
-                <Route
-                  path={RoutePaths.INDEX}
-                  element={<UserPage />}>
+                <Route path={RoutePaths.INDEX} element={<UserPage />}>
                   <Route
                     path={RoutePaths.INDEX + '/:idParam'}
-                    element={<UserPage/>}
+                    element={<UserPage />}
                   />
                 </Route>
 
@@ -66,7 +66,7 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 

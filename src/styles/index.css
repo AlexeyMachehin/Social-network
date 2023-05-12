@@ -44,3 +44,7 @@ body {
 .firebase-emulator-warning {
   display: none;
 }
+
+.opt-container input{
+  color: black;
+}
