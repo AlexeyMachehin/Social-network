@@ -1,11 +1,8 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
-
-const Users = require('../models/userSchema');
+import Users from '../models/userSchema';
 
 const deleteUser = async (req, res) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
+    await Users.findByIdAndDelete(req.params.id);
     return res.send('OK');
   } catch (error) {
     console.log(error);
@@ -72,7 +69,7 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  const errors = {};
+  const errors: { name?: { message: string } } = {};
 
   if (!req.body) {
     errors.name = { message: 'Enter data' };
@@ -105,10 +102,4 @@ const updateUser = async (req, res) => {
   }
 };
 
-module.exports = {
-  getUsers,
-  createUser,
-  getUserById,
-  deleteUser,
-  updateUser,
-};
+export { getUsers, createUser, getUserById, deleteUser, updateUser };
