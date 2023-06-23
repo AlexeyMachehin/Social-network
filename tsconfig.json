@@ -40,6 +40,6 @@
     "./test/",
     "./node_modules/",
     "./dist/",
-    "./server/server.js"
+    "**/*.js"
   ],
 }
