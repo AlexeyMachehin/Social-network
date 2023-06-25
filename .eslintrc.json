@@ -66,7 +66,6 @@
     "exclude": [
         "test",
         "node_modules",
-        "dist",
-        // "**/*.js"
+        "dist"
     ]
 }

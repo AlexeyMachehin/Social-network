@@ -19,10 +19,6 @@ const path = isDev
   ? process.env.CLIENT_DEV_PATH
   : process.env.CLIENT_PRODUCTION_PATH;
 
-// const path = isDev
-// ? 'http://localhost:5173'
-// : 'https://social-network-vk.netlify.app';
-
 console.log(`cors include path: ${path}`);
 
 connect(
@@ -48,3 +44,6 @@ app.use('/api/posts', postsRouter);
 app.get('/', (req, res) => {
   res.send('Database connected');
 });
+
+// Значение same-origin-allow-popups рекомендуется для заголовка Cross-Origin-Opener-Policy на страницах,
+//  где отображается кнопка «Войти с помощью Google» и/или Google One Tap.
