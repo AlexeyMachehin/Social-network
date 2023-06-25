@@ -39,7 +39,7 @@ export default function Login(props: { setIsLoginComponent: any }) {
             <LockOutlinedIcon />
           </Avatar>
 
-          <div className={classes.loginTitle}>Login</div>
+          <div className={classes.loginTitle}>Sign In</div>
         </div>
 
         <form onSubmit={formik.handleSubmit}>

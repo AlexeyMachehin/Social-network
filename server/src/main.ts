@@ -14,10 +14,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 const isDev = process.env.NODE_ENV === 'development';
-const path = isDev
-  ? 'http://localhost:5173'
-  : 'https://social-network-vk.netlify.app';
 const port = isDev ? 5000 : process.env.SERVER_PORT;
+const path = isDev
+  ? process.env.CLIENT_DEV_PATH
+  : process.env.CLIENT_PRODUCTION_PATH;
+
+// const path = isDev
+// ? 'http://localhost:5173'
+// : 'https://social-network-vk.netlify.app';
 
 console.log(`cors include path: ${path}`);
 

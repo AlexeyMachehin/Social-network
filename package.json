@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "bootstrap": "npm i && cd server && npm i",
     "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "build": "tsc && vite build",
-    "start_dev_client": "vite",
-    "start_dev_server": "cd server && npm run start_dev",
-    "start_dev_all": "concurrently \"npm run server\" \"cross-env NODE_ENV=development npm run dev\""
+    "dev:client": "vite",
+    "dev:server": "cd server && npm run start_dev",
+    "dev": "concurrently \"npm run dev:server\" \"cross-env NODE_ENV=development npm run dev:client\""
   },
   "author": "Alexey Machehin",
   "dependencies": {
@@ -19,6 +20,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@vitejs/plugin-react": "^3.1.0",
     "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
     "cross-env": "^7.0.3",
     "firebase": "^9.21.0",
     "formik": "^2.2.9",
