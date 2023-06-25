@@ -26,6 +26,8 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off",
         "react/jsx-filename-extension": [
             1,
             {
@@ -60,5 +62,11 @@
         "react": {
             "version": "detect"
         }
-    }
+    },
+    "exclude": [
+        "test",
+        "node_modules",
+        "dist",
+        "**/*.js"
+    ]
 }

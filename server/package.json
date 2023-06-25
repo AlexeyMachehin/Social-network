@@ -1,12 +1,15 @@
 {
-  "name": "my-express-app",
+  "name": "vk-server",
+  "type": "module",
   "version": "1.0.0",
-  "description": "My Express App",
-  "main": "server.js",
+  "description": "Express server",
+  "main": "main.ts",
   "scripts": {
-    "start_dev": "cross-env NODE_ENV=development nodemon server.js",
-    "start_prod": "cross-env NODE_ENV=production nodemon server.js"
+    "build": "rimraf ./dist && npx tsc",
+    "start_dev": "cross-env NODE_ENV=development npx nodemon",
+    "start_prod": "cross-env NODE_ENV=production npm run build && node dist/main"
   },
+  "author": "Alexey Machehin",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -14,5 +17,13 @@
     "mongodb": "^5.4.0",
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.1",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
   }
 }

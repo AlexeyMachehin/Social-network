@@ -1,8 +1,6 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
-const mongoose = require('mongoose');
+import { Schema, model } from 'mongoose';
 
-const userSchema = mongoose.Schema(
+const userSchema = new Schema(
   {
     email: { type: String, required: true, unique: true },
     name: { type: String, required: false, unique: false },
@@ -20,4 +18,4 @@ const userSchema = mongoose.Schema(
   },
 );
 
-module.exports = mongoose.model('Users', userSchema);
+export default model('Users', userSchema);

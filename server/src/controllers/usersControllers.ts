@@ -1,18 +1,15 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
+import Users from '../models/userSchema.js';
 
-const Users = require('../models/userSchema');
-
-const deleteUser = async (req, res) => {
+const deleteUser = async (req: any, res: any) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
+    await Users.findByIdAndDelete(req.params.id);
     return res.send('OK');
   } catch (error) {
     console.log(error);
   }
 };
 
-const getUsers = async (req, res) => {
+const getUsers = async (req: any, res: any) => {
   try {
     const users = await Users.find();
     res.status(200).json(users);
@@ -23,7 +20,7 @@ const getUsers = async (req, res) => {
   }
 };
 
-const getUserById = async (req, res) => {
+const getUserById = async (req: any, res: any) => {
   try {
     const user = await Users.findOne({ id: req.params.id });
     res.end(JSON.stringify(user));
@@ -34,7 +31,7 @@ const getUserById = async (req, res) => {
   }
 };
 
-const createUser = async (req, res) => {
+const createUser = async (req: any, res: any) => {
   try {
     const {
       email,
@@ -71,8 +68,8 @@ const createUser = async (req, res) => {
   }
 };
 
-const updateUser = async (req, res) => {
-  const errors = {};
+const updateUser = async (req: any, res: any) => {
+  const errors: { name?: { message: string } } = {};
 
   if (!req.body) {
     errors.name = { message: 'Enter data' };
@@ -105,10 +102,4 @@ const updateUser = async (req, res) => {
   }
 };
 
-module.exports = {
-  getUsers,
-  createUser,
-  getUserById,
-  deleteUser,
-  updateUser,
-};
+export { getUsers, createUser, getUserById, deleteUser, updateUser };
