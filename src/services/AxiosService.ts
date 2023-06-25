@@ -1,14 +1,12 @@
-/* eslint-disable @typescript-eslint/return-await */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/namespace */
 import Axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { AnyObject, AnyArray } from 'immer/dist/types/types-internal';
 
 const isDev = process.env.NODE_ENV === 'development';
 const path = isDev
-  ? 'http://localhost:5000'
-  : 'https://social-network-server-jciy.onrender.com';
+  ? process.env.SERVER_DEV_PATH
+  : process.env.SERVER_PRODUCTION_PATH;
 
-console.log(`database connected on path: ${path}`);
+console.log(`(Axios) Database uses at path: ${path}`);
 
 const apiAxiosInstance = Axios.create({
   baseURL: path,
@@ -16,7 +14,6 @@ const apiAxiosInstance = Axios.create({
     'Referrer-Policy': 'no-referrer',
   },
 });
-import { AnyObject, AnyArray } from 'immer/dist/types/types-internal';
 
 export type IBasePayload = AnyObject | AnyArray;
 

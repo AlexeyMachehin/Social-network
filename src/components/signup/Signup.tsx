@@ -59,7 +59,7 @@ export default function Signup(props: { setIsLoginComponent: any }) {
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
           <CheckBoxIcon />
         </Avatar>
-        <div className={classes.signupTitle}>Signup</div>
+        <div className={classes.signupTitle}>Sign Up</div>
       </div>
 
       <form onSubmit={formik.handleSubmit}>
