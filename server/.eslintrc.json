@@ -1,16 +1,13 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "extends": [
         "airbnb-typescript",
         "eslint:recommended",
-        "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
         "plugin:import/recommended",
         "prettier"
     ],
@@ -21,24 +18,9 @@
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
     "rules": {
         // "no-use-before-define": "off",
-        // "@typescript-eslint/no-use-before-define": "off",
-        "react/jsx-filename-extension": [
-            1,
-            {
-                "extensions": [
-                    ".ts",
-                    ".js",
-                    ".tsx",
-                    ".jsx"
-                ]
-            }
-        ]
+        // "@typescript-eslint/no-use-before-define": "off"
     },
     "settings": {
         "import/resolver": {
@@ -51,14 +33,9 @@
                 ],
                 "extensions": [
                     ".ts",
-                    ".tsx",
-                    ".js",
-                    ".jsx"
+                    ".js"
                 ]
             }
-        },
-        "react": {
-            "version": "detect"
         }
     }
 }

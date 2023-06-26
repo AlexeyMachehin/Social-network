@@ -9,6 +9,10 @@ import { usersRouter } from './routes/users.js';
 import { postsRouter } from './routes/posts.js';
 
 config();
+ggg()
+ function ggg(){
+
+ }
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
