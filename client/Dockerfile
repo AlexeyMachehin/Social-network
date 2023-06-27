@@ -1,6 +1,6 @@
 FROM node:18.12.1
 
-WORKDIR /app/server
+WORKDIR /app/client
 
 COPY package*.json ./
 
@@ -10,8 +10,8 @@ RUN yarn
 
 COPY . .
 
-ENV PORT=5000
+ENV PORT=3000
 
-EXPOSE 5000
+EXPOSE 3000
 
-CMD [ "yarn", "run", "start_prod" ]
+CMD [ "yarn", "run", "start" ]

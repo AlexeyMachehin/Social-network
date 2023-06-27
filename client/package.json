@@ -6,7 +6,8 @@
     "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "start": "yarn build && yarn preview --port 3000 --host"
   },
   "dependencies": {
     "@firebase/auth": "^0.23.1",
@@ -16,6 +17,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "axios": "^1.4.0",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
     "firebase": "^9.21.0",
     "formik": "^2.2.9",
     "mui-one-time-password-input": "^1.1.0",
