@@ -25,14 +25,12 @@
   },
   "include": [
     "src/**/*",
-    ".eslintrc.json",
-    "../vite.config.ts"
+    ".eslintrc.json"
   ],
   "exclude": [
     "./test/",
     "./node_modules/",
-    "./dist/",
-    "**/*.js"
+    "./dist/"
   ],
   "ts-node": {
     "esm": true

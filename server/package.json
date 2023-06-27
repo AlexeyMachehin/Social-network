@@ -1,16 +1,13 @@
 {
-  "name": "vk-server",
   "type": "module",
-  "version": "1.0.0",
-  "description": "Express server",
   "main": "main.ts",
+  "license": "MIT",
   "scripts": {
     "eslint": "eslint . --ext .js,.ts",
     "build": "rimraf ./dist && npx tsc",
     "start_dev": "cross-env NODE_ENV=development npx nodemon",
     "start_prod": "cross-env NODE_ENV=production yarn run build && node dist/main"
   },
-  "author": "Alexey Machehin",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -32,9 +29,6 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.3"

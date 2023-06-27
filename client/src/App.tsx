@@ -15,11 +15,6 @@ import { userService } from './services/userService';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './styles/App.css';
 
-
-ggg()
- function ggg(){
-
- }
 const theme = createTheme();
 
 function App() {
