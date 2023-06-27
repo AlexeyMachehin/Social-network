@@ -1,30 +1,36 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "target": "ESNext",
+    "useDefineForClassFields": true,
     "lib": [
-      "ES6"
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
     ],
-    "module": "NodeNext",
-    "rootDir": "./src",
-    "resolveJsonModule": true,
-    "allowJs": true,
     "outDir": "dist",
+    "module": "NodeNext",
+    "allowJs": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitAny": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "removeComments": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    ".eslintrc.json"
   ],
   "exclude": [
-    "node_modules"
-  ],
-  "lib": [
-    "esnext"
+    "./test/",
+    "./node_modules/",
+    "./dist/"
   ],
   "ts-node": {
     "esm": true
