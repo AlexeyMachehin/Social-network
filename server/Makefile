@@ -1,5 +1,5 @@
 build:
-	docker build -t social-network-server .
+	docker build -t server .
 
 run:
-	docker run -d -p 3000:3000 --name social-network-server --rm social-network-server
+	docker run -d -p 5000:5000 --name server --rm server

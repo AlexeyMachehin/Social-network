@@ -6,10 +6,11 @@
     "eslint": "eslint . --ext .js,.ts",
     "build": "rimraf ./dist && npx tsc",
     "start_dev": "cross-env NODE_ENV=development npx nodemon",
-    "start_prod": "cross-env NODE_ENV=production yarn run build && node dist/main"
+    "start_prod": "cross-env NODE_ENV=production yarn run build && node dist/src/main"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "mongodb": "^5.4.0",

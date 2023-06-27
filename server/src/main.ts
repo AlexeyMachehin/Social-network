@@ -1,5 +1,4 @@
-import express from 'express';
-import { json, urlencoded, static as staticFiles } from 'express';
+import express, { json, urlencoded, static as staticFiles } from 'express';
 import { connect, ConnectOptions } from 'mongoose';
 import cors from 'cors';
 import { config } from 'dotenv';
@@ -9,13 +8,9 @@ import { usersRouter } from './routes/users.js';
 import { postsRouter } from './routes/posts.js';
 
 config();
-ggg()
- function ggg(){
 
- }
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const fileName = fileURLToPath(import.meta.url);
+const dirName = dirname(fileName);
 const app = express();
 const isDev = process.env.NODE_ENV === 'development';
 const port = isDev ? 5000 : process.env.SERVER_PORT;
@@ -41,7 +36,7 @@ app.use(
 );
 app.use(json());
 app.use(urlencoded({ extended: true }));
-app.use('/static', staticFiles(join(__dirname, 'assets')));
+app.use('/static', staticFiles(join(dirName, 'assets')));
 app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);
 
