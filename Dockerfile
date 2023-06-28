@@ -15,8 +15,6 @@ WORKDIR /app/server
 
 COPY server/package*.json ./
 
-RUN npm install -g --force yarn
-
 RUN yarn
 
 COPY server/ .
@@ -27,8 +25,6 @@ FROM base as client
 WORKDIR /app/client
 
 COPY client/package*.json ./
-
-RUN npm install -g --force yarn
 
 RUN yarn
 
