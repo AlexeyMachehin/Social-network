@@ -8,6 +8,8 @@ RUN npm install -g --force yarn
 
 RUN yarn add concurrently
 
+RUN yarn add rimraf
+
 
 FROM base as server
 
