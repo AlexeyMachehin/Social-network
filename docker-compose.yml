@@ -9,6 +9,8 @@ services:
       - "3000:3000"
     depends_on:
       - server
+    networks:
+      - myNetwork  
 
   server:
     build:
@@ -16,3 +18,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
+    networks:
+      - myNetwork
+
+networks:
+  myNetwork:
+    driver: bridge        

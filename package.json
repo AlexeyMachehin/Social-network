@@ -3,19 +3,14 @@
   "author": "Alexey Machehin",
   "license": "MIT",
   "scripts": {
-    "bootstrap": "yarn clean && yarn && cd server && yarn && cd .. && cd client && yarn",
-    "clean": "cd server && rimraf node_modules && cd .. && cd client && rimraf node_modules && cd .. && rimraf node_modules",
-    "dev:client": "cd client && yarn dev",
-    "dev:server": "cd server && yarn run start_dev",
-    "prod:client": "cd client && yarn build && yarn preview",
-    "prod:server": "cd server && yarn run start_prod",
-    "dev": "concurrently \"yarn run dev:server\" \"cross-env NODE_ENV=development yarn run dev:client\"",
-    "prod": "concurrently \"yarn run prod:server\" \"cross-env NODE_ENV=production yarn run prod:client\""
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.0"
+    "bootstrap": "yarn add concurrently && yarn clean && yarn && concurrently \"cd server && yarn\" \"cd client && yarn\"",
+    "clean": "concurrently \"cd server && rimraf node_modules\" \"cd client && rimraf node_modules\" \"rimraf node_modules\"",
+    "clean-build": "concurrently \"cd server && rimraf dist\" \"cd client && rimraf dist\"",
+    "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn dev\"",
+    "start": "yarn clean-build && concurrently \"cd server && yarn start\" \"cd client && yarn start\""
   },
   "dependencies": {
+    "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.43.0",
     "rimraf": "^5.0.1"

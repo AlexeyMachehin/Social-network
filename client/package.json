@@ -2,12 +2,12 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
+    "build": "cross-env NODE_ENV=production tsc && vite build",
+    "dev": "cross-env NODE_ENV=development vite",
+    "preview": "vite preview --port 3000",
+    "start": "yarn build && yarn preview",
     "stylelint": "stylelint src/**/*.css",
-    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "build": "tsc && vite build",
-    "start": "yarn build && yarn preview --port 3000 --host"
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@firebase/auth": "^0.23.1",
