@@ -3,10 +3,10 @@
   "main": "main.ts",
   "license": "MIT",
   "scripts": {
-    "eslint": "eslint . --ext .js,.ts",
-    "build": "rimraf ./dist && npx tsc",
-    "start_dev": "cross-env NODE_ENV=development npx nodemon",
-    "start_prod": "cross-env NODE_ENV=production yarn run build && node dist/src/main"
+    "build": "cross-env NODE_ENV=production rimraf ./dist && npx tsc",
+    "dev": "cross-env NODE_ENV=development npx nodemon",
+    "start": "yarn build && node dist/src/main",
+    "eslint": "eslint . --ext .js,.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -4,8 +4,12 @@ import EnvironmentPlugin from 'vite-plugin-environment';
 import * as path from 'path';
 
 export default defineConfig({
+  build: {
+    emptyOutDir: true,
+  },
   server: {
-    port:  3000,
+    port: Number(process.env.CLIENT_PORT) || 3000,
+    host: '0.0.0.0',
   },
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],

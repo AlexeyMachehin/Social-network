@@ -23,11 +23,18 @@ console.log(`cors include path: ${path}`);
 connect(
   `mongodb+srv://alex:${process.env.MONGO_PASS}@social-network-cluster.jreewt4.mongodb.net/social-network?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true } as ConnectOptions,
-).then(() => {
-  app.listen(port, () => {
-    console.log(`app listens on port: ${port}`);
+)
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`app listens on port: ${port}`);
+    });
+  })
+  .catch((err: any) => {
+    console.error(
+      '  MongoDB connection error. Please make sure MongoDB is running. ' + err,
+    );
+    process.exit();
   });
-});
 
 app.use(
   cors({

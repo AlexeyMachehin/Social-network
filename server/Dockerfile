@@ -10,8 +10,6 @@ RUN yarn
 
 COPY . .
 
-ENV PORT=5000
-
 EXPOSE 5000
 
-CMD [ "yarn", "run", "start_prod" ]
+CMD [ "yarn", "run", "start" ]
