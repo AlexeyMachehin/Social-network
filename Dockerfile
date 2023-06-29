@@ -6,9 +6,7 @@ COPY package*.json ./
 
 RUN npm install -g --force yarn
 
-RUN yarn add concurrently
-
-RUN yarn add rimraf
+RUN yarn 
 
 
 FROM base as server
