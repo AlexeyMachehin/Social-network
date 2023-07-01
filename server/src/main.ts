@@ -2,16 +2,13 @@ import express, { json, urlencoded, static as staticFiles } from 'express';
 import { connect, ConnectOptions } from 'mongoose';
 import cors from 'cors';
 import { config } from 'dotenv';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { usersRouter } from './routes/users.js';
-import { postsRouter } from './routes/posts.js';
-import { CLIENT_URL, MONGO_PATH, SERVER_PORT } from './secrets/secrets.js';
+import { join } from 'path';
+import { usersRouter } from './routes/users';
+import { postsRouter } from './routes/posts';
+import { CLIENT_URL, MONGO_PATH, SERVER_PORT } from './secrets/secrets';
 
 config();
 
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
 const app = express();
 
 console.log(`cors include path: ${CLIENT_URL}`);
@@ -27,7 +24,7 @@ connect(String(MONGO_PATH), {
   })
   .catch((err: any) => {
     console.error(
-      '  MongoDB connection error. Please make sure MongoDB is running. ' + err,
+      'MongoDB connection error. Please make sure MongoDB is running. ' + err,
     );
     process.exit();
   });
@@ -39,7 +36,7 @@ app.use(
 );
 app.use(json());
 app.use(urlencoded({ extended: true }));
-app.use('/static', staticFiles(join(dirName, 'assets')));
+app.use('/static', staticFiles(join(__dirname, 'assets')));
 app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);
 

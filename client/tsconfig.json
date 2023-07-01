@@ -28,7 +28,7 @@
   },
   "include": [
     "src/**/*",
-    ".eslintrc.json",
+    ".eslintrc.js",
     "vite.config.ts"
   ],
   "references": [

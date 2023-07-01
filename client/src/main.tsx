@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import './styles/index.css';
 
+ggg()
+function ggg(){}
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter>
     <Provider store={store}>

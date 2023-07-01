@@ -1,4 +1,4 @@
-import { createPost, getPosts } from '@/controllers/postsControllers.js';
+import { createPost, getPosts } from '../controllers/postsControllers';
 import { Router } from 'express';
 
 
