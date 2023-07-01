@@ -6,27 +6,23 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { usersRouter } from './routes/users.js';
 import { postsRouter } from './routes/posts.js';
+import { CLIENT_URL, MONGO_PATH, SERVER_PORT } from './secrets/secrets.js';
 
 config();
 
 const fileName = fileURLToPath(import.meta.url);
 const dirName = dirname(fileName);
 const app = express();
-const isDev = process.env.NODE_ENV === 'development';
-const port = isDev ? 5000 : process.env.SERVER_PORT;
-const path = isDev
-  ? process.env.CLIENT_DEV_PATH
-  : process.env.CLIENT_PRODUCTION_PATH;
 
-console.log(`cors include path: ${path}`);
+console.log(`cors include path: ${CLIENT_URL}`);
 
-connect(
-  `mongodb+srv://alex:${process.env.MONGO_PASS}@social-network-cluster.jreewt4.mongodb.net/social-network?retryWrites=true&w=majority`,
-  { useNewUrlParser: true, useUnifiedTopology: true } as ConnectOptions,
-)
+connect(String(MONGO_PATH), {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+} as ConnectOptions)
   .then(() => {
-    app.listen(port, () => {
-      console.log(`app listens on port: ${port}`);
+    app.listen(SERVER_PORT, () => {
+      console.log(`app listens on port: ${SERVER_PORT}`);
     });
   })
   .catch((err: any) => {
@@ -38,7 +34,7 @@ connect(
 
 app.use(
   cors({
-    origin: path,
+    origin: CLIENT_URL,
   }),
 );
 app.use(json());

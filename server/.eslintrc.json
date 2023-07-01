@@ -22,7 +22,8 @@
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "off",
         "import/no-unresolved": "off",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "import/extensions": "off"
     },
     "settings": {
         "import/resolver": {

@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "social-network",
   "author": "Alexey Machehin",
   "license": "MIT",
@@ -13,6 +14,9 @@
     "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
     "rimraf": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.3"
   },
   "engines": {
     "node": "18.12.1"
