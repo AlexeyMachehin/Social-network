@@ -9,6 +9,9 @@ import { CLIENT_URL, MONGO_PATH, SERVER_PORT } from './secrets/secrets';
 
 config();
 
+ggg();
+function ggg() {}
+
 const app = express();
 
 console.log(`cors include path: ${CLIENT_URL}`);

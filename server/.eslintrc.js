@@ -8,11 +8,7 @@ module.exports = {
   extends: [
     'airbnb-typescript',
     'eslint:recommended',
-    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
     'plugin:import/recommended',
     'prettier',
   ],
@@ -23,26 +19,18 @@ module.exports = {
     project: 'tsconfig.json',
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   rules: {
     // 'no-use-before-define': 'off',
     // '@typescript-eslint/no-use-before-define': 'off',
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.js', '.ts', '.tsx', '.jsx'],
-      },
-    ],
+    'react/jsx-filename-extension': "off"
   },
   settings: {
     'import/resolver': {
       alias: {
         map: [['@', `${__dirname}/src`]],
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['.ts', '.js'],
       },
-    },
-    react: {
-      version: 'detect',
     },
   },
 };

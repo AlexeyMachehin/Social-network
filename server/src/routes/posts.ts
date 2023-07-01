@@ -1,6 +1,5 @@
-import { createPost, getPosts } from '../controllers/postsControllers';
+import { getPosts, createPost } from '@/controllers/postsControllers';
 import { Router } from 'express';
-
 
 export const postsRouter = Router();
 
