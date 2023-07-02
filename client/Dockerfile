@@ -2,11 +2,11 @@ FROM node:18.12.1
 
 WORKDIR /app/client
 
-COPY package*.json ./
+COPY package*.json yarn.lock ./
 
 RUN npm install -g --force yarn
 
-RUN yarn
+RUN yarn --frozen-lockfile
 
 COPY . .
 
