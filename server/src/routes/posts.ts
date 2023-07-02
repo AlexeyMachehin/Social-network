@@ -1,3 +1,4 @@
+
 import { getPosts, createPost } from '@/controllers/postsControllers';
 import { Router } from 'express';
 

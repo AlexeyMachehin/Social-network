@@ -25,7 +25,8 @@
   },
   "include": [
     "src/**/*",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "tsconfig-paths-bootstrap.js"
   ],
   "exclude": [
     "./test/",
