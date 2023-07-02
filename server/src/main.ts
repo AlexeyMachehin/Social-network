@@ -3,14 +3,11 @@ import { connect, ConnectOptions } from 'mongoose';
 import cors from 'cors';
 import { config } from 'dotenv';
 import { join } from 'path';
-import { usersRouter } from './routes/users';
 import { postsRouter } from './routes/posts';
+import { usersRouter } from './routes/users';
 import { CLIENT_URL, MONGO_PATH, SERVER_PORT } from './secrets/secrets';
 
 config();
-
-ggg();
-function ggg() {}
 
 const app = express();
 
