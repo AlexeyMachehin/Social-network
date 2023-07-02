@@ -1,4 +1,4 @@
-import Users from '../models/userSchema.js';
+import Users from '../models/userSchema';
 
 const deleteUser = async (req: any, res: any) => {
   try {

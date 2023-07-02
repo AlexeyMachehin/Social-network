@@ -2,48 +2,41 @@ import express, { json, urlencoded, static as staticFiles } from 'express';
 import { connect, ConnectOptions } from 'mongoose';
 import cors from 'cors';
 import { config } from 'dotenv';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { usersRouter } from './routes/users.js';
-import { postsRouter } from './routes/posts.js';
+import { join } from 'path';
+import { postsRouter } from './routes/posts';
+import { usersRouter } from './routes/users';
+import { CLIENT_URL, MONGO_PATH, SERVER_PORT } from './secrets/secrets';
 
 config();
 
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
 const app = express();
-const isDev = process.env.NODE_ENV === 'development';
-const port = isDev ? 5000 : process.env.SERVER_PORT;
-const path = isDev
-  ? process.env.CLIENT_DEV_PATH
-  : process.env.CLIENT_PRODUCTION_PATH;
 
-console.log(`cors include path: ${path}`);
+console.log(`cors include path: ${CLIENT_URL}`);
 
-connect(
-  `mongodb+srv://alex:${process.env.MONGO_PASS}@social-network-cluster.jreewt4.mongodb.net/social-network?retryWrites=true&w=majority`,
-  { useNewUrlParser: true, useUnifiedTopology: true } as ConnectOptions,
-)
+connect(String(MONGO_PATH), {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+} as ConnectOptions)
   .then(() => {
-    app.listen(port, () => {
-      console.log(`app listens on port: ${port}`);
+    app.listen(SERVER_PORT, () => {
+      console.log(`app listens on port: ${SERVER_PORT}`);
     });
   })
   .catch((err: any) => {
     console.error(
-      '  MongoDB connection error. Please make sure MongoDB is running. ' + err,
+      'MongoDB connection error. Please make sure MongoDB is running. ' + err,
     );
     process.exit();
   });
 
 app.use(
   cors({
-    origin: path,
+    origin: CLIENT_URL,
   }),
 );
 app.use(json());
 app.use(urlencoded({ extended: true }));
-app.use('/static', staticFiles(join(dirName, 'assets')));
+app.use('/static', staticFiles(join(__dirname, 'assets')));
 app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);
 

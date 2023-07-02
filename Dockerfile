@@ -2,20 +2,20 @@ FROM node:18.12.1 as base
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json yarn.lock ./
 
 RUN npm install -g --force yarn
 
-RUN yarn 
+RUN yarn --frozen-lockfile
 
 
 FROM base as server
 
 WORKDIR /app/server
 
-COPY server/package*.json ./
+COPY server/package*.json server/yarn.lock ./
 
-RUN yarn
+RUN yarn --frozen-lockfile
 
 COPY server/ .
 
@@ -24,9 +24,9 @@ FROM base as client
 
 WORKDIR /app/client
 
-COPY client/package*.json ./
+COPY client/package*.json client/yarn.lock ./
 
-RUN yarn
+RUN yarn --frozen-lockfile
 
 COPY client/ .
 

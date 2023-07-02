@@ -25,7 +25,7 @@
   },
   "include": [
     "src/**/*",
-    ".eslintrc.json"
+    ".eslintrc.js"
   ],
   "exclude": [
     "./test/",

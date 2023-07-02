@@ -1,11 +1,10 @@
 {
-  "type": "module",
   "main": "main.ts",
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf ./dist && npx tsc",
     "dev": "cross-env NODE_ENV=development npx nodemon",
-    "start": "yarn build && node dist/src/main",
+    "start": "yarn build && node -r ./tsconfig-paths-bootstrap.js dist/src/main",
     "eslint": "eslint . --ext .js,.ts"
   },
   "dependencies": {
@@ -16,7 +15,7 @@
     "mongodb": "^5.4.0",
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22",
-    "vite-plugin-environment": "^1.1.3"
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

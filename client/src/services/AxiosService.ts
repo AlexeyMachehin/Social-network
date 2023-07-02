@@ -1,21 +1,14 @@
+import { SERVER_URL } from '../secrets/secrets';
 import Axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
-import { AnyObject, AnyArray } from 'immer/dist/types/types-internal';
 
-const isDev = process.env.NODE_ENV === 'development';
-const path = isDev
-  ? process.env.SERVER_DEV_PATH
-  : process.env.SERVER_PRODUCTION_PATH;
-
-console.log(`(Axios) Database uses at path: ${path}`);
+console.log(`(Axios) baseURL: ${SERVER_URL}`);
 
 const apiAxiosInstance = Axios.create({
-  baseURL: path,
+  baseURL: SERVER_URL,
   headers: {
     'Referrer-Policy': 'no-referrer',
   },
 });
-
-export type IBasePayload = AnyObject | AnyArray;
 
 export abstract class AxiosService {
   private readonly axios: AxiosInstance = apiAxiosInstance;
@@ -27,17 +20,17 @@ export abstract class AxiosService {
   }
 
   public async get<T>(url: string, payload?: AxiosRequestConfig): Promise<T> {
-    return await this.axios.get<T>(url, payload).then(result => result.data);
+    return this.axios.get<T>(url, payload).then(result => result.data);
   }
 
-  public async post<Request, Payload extends IBasePayload>(
+  public async post<Request, Payload>(
     url: string,
     payload?: Request,
   ): Promise<Payload> {
     return this.axios.post(url, payload);
   }
 
-  public async put<Request, Payload extends IBasePayload>(
+  public async put<Request, Payload>(
     url: string,
     payload?: Request,
   ): Promise<Payload> {
