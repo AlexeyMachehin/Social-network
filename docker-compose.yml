@@ -1,23 +1,40 @@
 version: "3"
 services:
   client:
-    stdin_open: true
+    restart: always
     build:
       context: ./client
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    environment:
+      - FIREBASE_API_KEY=${FIREBASE_API_KEY}
+      - FIREBASE_AUTH_DOMAIN=${FIREBASE_AUTH_DOMAIN}
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+      - FIREBASE_STORAGE_BUCKET=${FIREBASE_STORAGE_BUCKET} 
+      - FIREBASE_MESSAGING_SENDER_ID=${FIREBASE_MESSAGING_SENDER_ID}
+      - FIREBASE_APP_ID=${FIREBASE_APP_ID} 
+      - FIREBASE_MEASUREMENT_ID=${FIREBASE_MEASUREMENT_ID}
+      - CLIENT_PORT=${CLIENT_PORT} 
+      - SERVER_DEV_URL=${SERVER_DEV_URL}
+      - SERVER_PROD_URL=${SERVER_PROD_URL}   
     depends_on:
       - server
     networks:
       - myNetwork  
 
   server:
+    restart: always
     build:
       context: ./server
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - CLIENT_DEV_URL=${CLIENT_DEV_URL}
+      - CLIENT_PROD_URL=${CLIENT_PROD_URL}
+      - MONGO_PATH=${MONGO_PATH}        
     networks:
       - myNetwork
 

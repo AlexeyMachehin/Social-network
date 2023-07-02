@@ -2,4 +2,4 @@ build:
 	docker build -t client .
 
 run:
-	docker run -d -p 3000:3000 --name client --rm client
+	docker run -d -p 3000:3000 --name client --rm --env-file .env client

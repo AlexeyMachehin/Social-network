@@ -2,4 +2,4 @@ build:
 	docker build -t server .
 
 run:
-	docker run -d -p 5000:5000 --name server --rm server
+	docker run -d -p 5000:5000 --name server --rm --env-file .env server
