@@ -7,7 +7,7 @@
     "clean": "concurrently \"cd server && rimraf node_modules\" \"cd client && rimraf node_modules\" \"rimraf node_modules\"",
     "clean-build": "concurrently \"cd server && rimraf dist\" \"cd client && rimraf dist\"",
     "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn dev\"",
-    "start": "yarn clean-build && concurrently \"cd server && yarn start\" \"cd client && yarn start\""
+    "start": "concurrently \"cd server && yarn start\" \"cd client && yarn start\""
   },
   "dependencies": {
     "concurrently": "^8.2.0",
