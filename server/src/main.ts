@@ -35,11 +35,6 @@ app.use(
   }),
 );
 
-app.use((req, res, next) => {
-  res.setHeader('Cross-Origin-Opener-Policy', 'unsafe-none');
-  next();
-});
-
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use('/static', staticFiles(join(__dirname, 'assets')));
