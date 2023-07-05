@@ -1,6 +1,8 @@
 version: "3"
 services:
   client:
+    container_name: client-container
+    image: client-image
     restart: always
     build:
       context: ./client
@@ -24,6 +26,8 @@ services:
       - myNetwork  
 
   server:
+    container_name: server-container
+    image: server-image
     restart: always
     build:
       context: ./server
